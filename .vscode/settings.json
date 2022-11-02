@@ -1,0 +1,10 @@
+{
+    "java.configuration.runtimes": [
+        {
+          "name": "JavaSE-11",
+          "path": "/usr/local/openjdk-11",
+          "default":  true
+         }
+      ],
+      "java.configuration.updateBuildConfiguration": "automatic"
+}

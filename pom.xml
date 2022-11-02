@@ -7,8 +7,8 @@
   <packaging>sonar-plugin</packaging>
   <version>9.0.0</version>
 
-  <name>Example Plugin for SonarQube 9.x</name>
-  <description>Example of Plugin for SonarQube: Foo Language, FooLint, Custom Metrics and MeasureComputers</description>
+  <name>SonarQube Plugin to execute external Analyzers</name>
+  <description>Executes external analyzers from a docker container and reports issues</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,6 +60,27 @@
           <pluginClass>org.sonarsource.plugins.example.ExamplePlugin</pluginClass>
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- UTF-8 bundles are not supported by Java, so they must be converted during build -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>native2ascii-maven-plugin</artifactId>
+        <version>2.0.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

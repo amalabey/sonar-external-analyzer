@@ -12,7 +12,7 @@
 			// Options
 			"INSTALL_MAVEN": "true",
 			"INSTALL_GRADLE": "false",
-			"NODE_VERSION": "none"
+			"NODE_VERSION": "lts/*"
 		}
 	},
 
@@ -38,5 +38,5 @@
 	// "postCreateCommand": "java -version",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	"remoteUser": "root"
 }

@@ -18,33 +18,29 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
 
   @Override
   public void describe(SensorDescriptor descriptor) {
-    descriptor.name("Add issues on line 1 of all Java files");
-
-    // optimisation to disable execution of sensor if project does
-    // not contain Java files or if the example rule is not activated
-    // in the Quality profile
-    descriptor.onlyOnLanguage("java");
-    descriptor.createIssuesForRuleRepositories(Constants.REPOSITORY_KEY);
+    descriptor.name("Create issues based on external analyzer results");
   }
 
   @Override
   public void execute(SensorContext context) {
+    LOGGER.info("ExternalAnalyzerResultsSensor: Starting sensor execution");
     FileSystem fs = context.fileSystem();
-    Iterable<InputFile> javaFiles = fs.inputFiles(fs.predicates().hasLanguage("csharp"));
-    for (InputFile javaFile : javaFiles) {
-      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue");
+    Iterable<InputFile> csprojFiles = fs.inputFiles(fs.predicates().hasExtension("cs"));
+    for (InputFile csprojFile : csprojFiles) {
+      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {}",csprojFile.filename());
       RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, Constants.RULE_KEY);
       NewIssue newIssue = context.newIssue()
-        .forRule(ruleKey)
-        .gap(ARBITRARY_GAP);
+          .forRule(ruleKey)
+          .gap(ARBITRARY_GAP);
 
       NewIssueLocation primaryLocation = newIssue.newLocation()
-        .on(javaFile)
-        .at(javaFile.selectLine(LINE_1))
-        .message("You can't do anything. This is first line!");
+          .on(csprojFile)
+          .at(csprojFile.selectLine(LINE_1))
+          .message("You can't do anything. This is first line!");
       newIssue.at(primaryLocation);
       newIssue.save();
       LOGGER.info("ExternalAnalyzerResultsSensor: Sucessfully created the issue");
     }
+    LOGGER.info("ExternalAnalyzerResultsSensor: Completed sensor execution");
   }
 }

@@ -61,7 +61,7 @@
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
           <archive>
             <manifestEntries>
-              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b19</Implementation-Build>
+              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b26</Implementation-Build>
             </manifestEntries>
           </archive>
         </configuration>

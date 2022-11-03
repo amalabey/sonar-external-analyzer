@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.sonarsource.plugins.example</groupId>
+  <groupId>org.sonarsource.plugins.extanalyzer</groupId>
   <artifactId>sonar-external-analyzer</artifactId>
   <packaging>sonar-plugin</packaging>
   <version>9.0.0</version>
@@ -57,8 +57,13 @@
         <extensions>true</extensions>
         <configuration>
           <pluginKey>example</pluginKey>
-          <pluginClass>org.sonarsource.plugins.example.ExamplePlugin</pluginClass>
+          <pluginClass>org.sonarsource.plugins.extanalyzer.ExternalAnalyzerPlugin</pluginClass>
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
+          <archive>
+            <manifestEntries>
+              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b08</Implementation-Build>
+            </manifestEntries>
+          </archive>
         </configuration>
       </plugin>
       <plugin>

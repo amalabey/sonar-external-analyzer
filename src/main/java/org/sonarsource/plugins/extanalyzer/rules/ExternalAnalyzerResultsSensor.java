@@ -1,5 +1,6 @@
-package org.sonarsource.plugins.example.rules;
+package org.sonarsource.plugins.extanalyzer.rules;
 
+import org.sonar.api.rule.RuleKey;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.Sensor;
@@ -7,13 +8,11 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.batch.sensor.issue.NewIssueLocation;
+import org.sonarsource.plugins.extanalyzer.Constants;
+import org.sonar.api.utils.log.*;
 
-/**
- * Generates issues on all java files at line 1. This rule
- * must be activated in the Quality profile.
- */
-public class CreateIssuesOnJavaFilesSensor implements Sensor {
-
+public class ExternalAnalyzerResultsSensor implements Sensor {
+  private static final Logger LOGGER = Loggers.get(ExternalAnalyzerResultsSensor.class);
   private static final double ARBITRARY_GAP = 2.0;
   private static final int LINE_1 = 1;
 
@@ -25,20 +24,18 @@ public class CreateIssuesOnJavaFilesSensor implements Sensor {
     // not contain Java files or if the example rule is not activated
     // in the Quality profile
     descriptor.onlyOnLanguage("java");
-    descriptor.createIssuesForRuleRepositories(JavaRulesDefinition.REPOSITORY);
+    descriptor.createIssuesForRuleRepositories(Constants.REPOSITORY_KEY);
   }
 
   @Override
   public void execute(SensorContext context) {
     FileSystem fs = context.fileSystem();
-    Iterable<InputFile> javaFiles = fs.inputFiles(fs.predicates().hasLanguage("java"));
+    Iterable<InputFile> javaFiles = fs.inputFiles(fs.predicates().hasLanguage("csharp"));
     for (InputFile javaFile : javaFiles) {
-      // no need to define the severity as it is automatically set according
-      // to the configured Quality profile
+      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue");
+      RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, Constants.RULE_KEY);
       NewIssue newIssue = context.newIssue()
-        .forRule(JavaRulesDefinition.RULE_ON_LINE_1)
-
-        // gap is used to estimate the remediation cost to fix the debt
+        .forRule(ruleKey)
         .gap(ARBITRARY_GAP);
 
       NewIssueLocation primaryLocation = newIssue.newLocation()
@@ -47,6 +44,7 @@ public class CreateIssuesOnJavaFilesSensor implements Sensor {
         .message("You can't do anything. This is first line!");
       newIssue.at(primaryLocation);
       newIssue.save();
+      LOGGER.info("ExternalAnalyzerResultsSensor: Sucessfully created the issue");
     }
   }
 }

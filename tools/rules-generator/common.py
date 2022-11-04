@@ -8,3 +8,8 @@ class ExternalRulesProvider(ABC):
     @abstractmethod
     def get_rules(self):
         pass
+
+class RulesWriter(ABC):
+    @abstractmethod
+    def write_rules(self, rules, filePath):
+        pass

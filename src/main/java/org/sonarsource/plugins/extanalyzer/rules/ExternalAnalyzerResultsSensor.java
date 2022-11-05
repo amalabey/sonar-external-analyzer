@@ -27,8 +27,8 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
     FileSystem fs = context.fileSystem();
     Iterable<InputFile> csprojFiles = fs.inputFiles(fs.predicates().hasExtension("cs"));
     for (InputFile csprojFile : csprojFiles) {
-      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {}",csprojFile.filename());
       RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, Constants.RULE_KEY);
+      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {} - {}",csprojFile.filename(), ruleKey.rule());
       NewIssue newIssue = context.newIssue()
           .forRule(ruleKey)
           .gap(ARBITRARY_GAP);

@@ -16,7 +16,7 @@ class HorusecRulesProvider(ExternalRulesProvider):
         html_content = r.content
         soup = BeautifulSoup(r.content, 'html.parser')
         rule_headings = soup.select('div.alert-info')
-        rules = [Rule(id=x.contents[0], desc=x.find_next('p').contents[0]) for x in rule_headings]
+        rules = [Rule(id=x.contents[0], name=x.find_previous_sibling("h3"), desc=x.find_next('p').contents[0]) for x in rule_headings]
         
         # Sanitise rules using regexes
         for rule in rules:
@@ -25,6 +25,8 @@ class HorusecRulesProvider(ExternalRulesProvider):
                 rule.id = id_match.group('id')
             link_match = re.search("\((?P<url>https?://[^\s]+)\)", rule.desc)
             rule.link = link_match.group("url") if link_match != None else ""
+            name_subelem = rule.name.find("strong")
+            rule.name = name_subelem.contents[0] if name_subelem != None else rule.name.contents[0]
 
         return rules
 

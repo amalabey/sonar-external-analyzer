@@ -50,10 +50,25 @@
       <version>2.0</version>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.13.3</version>
-  </dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
+      <version>2.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.8.0</version>
+    </dependency>
   <dependency>
     <groupId>com.google.guava</groupId>
     <artifactId>guava</artifactId>
@@ -74,7 +89,7 @@
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
           <archive>
             <manifestEntries>
-              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b33</Implementation-Build>
+              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b34</Implementation-Build>
             </manifestEntries>
           </archive>
         </configuration>

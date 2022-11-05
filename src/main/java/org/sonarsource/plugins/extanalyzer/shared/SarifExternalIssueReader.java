@@ -1,5 +1,6 @@
 package org.sonarsource.plugins.extanalyzer.shared;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -23,9 +24,7 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             ArrayList<ExternalIssue> issues = new ArrayList<ExternalIssue>();
-            ClassLoader classLoader = this.getClass().getClassLoader();
-            InputStream inputStream = classLoader.getResourceAsStream(sarifFilePath);
-            SarifSchema210  sarif = objectMapper.readValue(inputStream, SarifSchema210.class);
+            SarifSchema210  sarif = objectMapper.readValue(new File(sarifFilePath), SarifSchema210.class);
             for(Run run : sarif.getRuns()) {
                 for(Result result : run.getResults()) {
                     var ruleId = result.getRuleId();

@@ -2,13 +2,19 @@ package org.sonarsource.plugins.extanalyzer.rules;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 import org.sonarsource.plugins.extanalyzer.Constants;
+import org.sonarsource.plugins.extanalyzer.shared.ExternalRule;
+import org.sonarsource.plugins.extanalyzer.shared.IExternalRulesStore;
+import org.sonarsource.plugins.extanalyzer.shared.XmlExternalRulesStore;
 
 public class GeneralProfile implements BuiltInQualityProfilesDefinition {
-
     @Override
     public void define(Context context) {
         NewBuiltInQualityProfile dependencyCheckWay = context.createBuiltInQualityProfile("General", Constants.LANGUAGE_KEY);
-        dependencyCheckWay.activateRule(Constants.REPOSITORY_KEY, Constants.RULE_KEY);
+        IExternalRulesStore store = new XmlExternalRulesStore();
+        Iterable<ExternalRule> rules = store.getRules();
+        for(ExternalRule rule : rules) {
+            dependencyCheckWay.activateRule(Constants.REPOSITORY_KEY, rule.Key);
+        }
         dependencyCheckWay.done();
     }
 }

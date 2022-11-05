@@ -31,8 +31,6 @@
       <artifactId>commons-lang</artifactId>
       <version>2.6</version>
     </dependency>
-
-
     <!-- unit tests -->
     <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
@@ -46,6 +44,21 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.contrastsecurity</groupId>
+      <artifactId>java-sarif</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.3</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>31.1-jre</version>
+  </dependency>
   </dependencies>
 
   <build>
@@ -61,7 +74,7 @@
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
           <archive>
             <manifestEntries>
-              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b32</Implementation-Build>
+              <Implementation-Build>c1090be7ad3684d6588e41085b446edb24a47b33</Implementation-Build>
             </manifestEntries>
           </archive>
         </configuration>

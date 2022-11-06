@@ -2,7 +2,6 @@ package org.sonarsource.plugins.extanalyzer.shared;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -23,7 +22,7 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
     public Iterable<ExternalIssue> getIssues() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            ArrayList<ExternalIssue> issues = new ArrayList<ExternalIssue>();
+            ArrayList<ExternalIssue> sarifResults = new ArrayList<ExternalIssue>();
             SarifSchema210  sarif = objectMapper.readValue(new File(sarifFilePath), SarifSchema210.class);
             for(Run run : sarif.getRuns()) {
                 for(Result result : run.getResults()) {
@@ -44,10 +43,11 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
                         .getPhysicalLocation()
                         .getRegion()
                         .getStartColumn();
-                    issues.add(new ExternalIssue(ruleId, message, filePath, startLine, startColumn));
+                    LOGGER.info("SarifExternalIssueReader: ruleId={}, filePath={}, message={}",ruleId, filePath, message);
+                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, startLine, startColumn != null?startColumn.intValue():0));
                 }
             }
-            return issues;
+            return sarifResults;
         } catch (IOException e) {
             LOGGER.error("ERROR: {}", e);
             e.printStackTrace();

@@ -37,8 +37,9 @@ public class XmlExternalRulesStore implements IExternalRulesStore {
                     String ruleKey = ruleElement.getElementsByTagName("key").item(0).getTextContent();
                     String ruleName = ruleElement.getElementsByTagName("name").item(0).getTextContent();
                     String desc = ruleElement.getElementsByTagName("description").item(0).getTextContent();
+                    String help = ruleElement.getElementsByTagName("help").item(0).getTextContent();
 
-                    rulesList.add(new ExternalRule(ruleKey, ruleName, desc));
+                    rulesList.add(new ExternalRule(ruleKey, ruleName, desc, help));
                 }
             }
 

@@ -54,12 +54,6 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
   private void importIssue(SensorContext context, ExternalIssue issue) {
     LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, ruleid={}", issue.FilePath, issue.RuleId);
     FileSystem fs = context.fileSystem();
-    // #TODO: remove below tracing code
-    var testFiles = fs.inputFiles(fs.predicates().all());
-    for (var file : testFiles) {
-      LOGGER.info("ExternalAnalyzerResultsSensor: >>{}", file.relativePath());
-    }
-
     Iterable<InputFile> matchedFiles = fs.inputFiles(fs.predicates().hasRelativePath(issue.FilePath));
     if (Iterables.size(matchedFiles) > 0) {
       InputFile inputFile = matchedFiles.iterator().next();

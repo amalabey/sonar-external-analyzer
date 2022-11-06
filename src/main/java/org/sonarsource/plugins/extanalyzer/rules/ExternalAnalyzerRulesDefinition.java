@@ -1,37 +1,52 @@
 package org.sonarsource.plugins.extanalyzer.rules;
 
+import org.sonar.api.rule.RuleKey;
 import org.sonar.api.rule.RuleStatus;
 import org.sonar.api.rule.Severity;
+import org.sonar.api.rules.RuleType;
 import org.sonar.api.server.rule.RuleDescriptionSection;
 import org.sonar.api.server.rule.RulesDefinition;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.plugins.extanalyzer.Constants;
-
+import org.sonarsource.plugins.extanalyzer.shared.ExternalRule;
+import org.sonarsource.plugins.extanalyzer.shared.IExternalRulesStore;
+import org.sonarsource.plugins.extanalyzer.shared.XmlExternalRulesStore;
 import static org.sonar.api.server.rule.RuleDescriptionSection.RuleDescriptionSectionKeys.HOW_TO_FIX_SECTION_KEY;
-import static org.sonar.api.server.rule.RuleDescriptionSection.RuleDescriptionSectionKeys.INTRODUCTION_SECTION_KEY;
-import static org.sonar.api.server.rule.RuleDescriptionSection.RuleDescriptionSectionKeys.ROOT_CAUSE_SECTION_KEY;
 
 public class ExternalAnalyzerRulesDefinition implements RulesDefinition {
+  private static final Logger LOGGER = Loggers.get(ExternalAnalyzerRulesDefinition.class);
 
   @Override
   public void define(Context context) {
+    LOGGER.info("ExternalAnalyzerRulesDefinition: Start defining the rule set");
     NewRepository repository = context.createRepository(Constants.REPOSITORY_KEY, Constants.LANGUAGE_KEY).setName("External Analyzer Rules");
-    createRule(repository);
+    importRules(repository);
     repository.done();
+    LOGGER.info("ExternalAnalyzerRulesDefinition: Completed defininig the ruleset");
   }
 
-  private NewRule createRule(NewRepository repo) {
-    NewRule rule = repo.createRule(Constants.RULE_KEY)
-    .setName("The dynamic value passed to the command execution should be validated.")
-    .addTags("cwe-78","owasp-a1")
+  private void importRules(NewRepository repo) {
+      IExternalRulesStore store = new XmlExternalRulesStore();
+      Iterable<ExternalRule> rules = store.getRules();
+
+      for(ExternalRule rule : rules)
+      {
+          createRule(repo, rule.Key, rule.Name, rule.Description, rule.Help);
+      }
+  }
+
+  private void createRule(NewRepository repo, String ruleKey, String name, String description, String help) {
+    LOGGER.info("ExternalAnalyzerRulesDefinition: Creating rule {}", ruleKey);
+    RuleKey key = RuleKey.of(Constants.REPOSITORY_KEY, ruleKey);
+    NewRule rule = repo.createRule(key.rule())
+    .setName(name)
     .setSeverity(Severity.MAJOR)
     .setStatus(RuleStatus.READY)
-    .addCwe(78)
-    .setHtmlDescription("The dynamic value passed to the command execution should be validated.")
-    .addDescriptionSection(descriptionSection(INTRODUCTION_SECTION_KEY, "If a malicious user controls either the FileName or Arguments, he might be able to execute unwanted commands.."))
-    .addDescriptionSection(descriptionSection(ROOT_CAUSE_SECTION_KEY, "The root cause of this issue is this and that."))
-    .addDescriptionSection(descriptionSection(HOW_TO_FIX_SECTION_KEY,
-        "To fix an issue reported by this rule when using Hibernate do this and that."));
-    return rule;
+    .setType(RuleType.VULNERABILITY)
+    .setHtmlDescription(description)
+    .addDescriptionSection(descriptionSection(HOW_TO_FIX_SECTION_KEY, String.format("%s <hr><br> %s", description, help)));
+    rule.setDebtRemediationFunction(rule.debtRemediationFunctions().linearWithOffset("1h", "30min"));
   }
 
   private static RuleDescriptionSection descriptionSection(String sectionKey, String htmlContent) {

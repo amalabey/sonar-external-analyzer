@@ -1,0 +1,211 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "HorusecEngine",
+          "informationUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+          "rules": [
+            {
+              "id": "HS-CSHARP-2",
+              "shortDescription": {
+                "text": "(1/1) * Possible vulnerability detected: XPath Injection\nIf the user input is not properly filtered, a malicious user could extend the XPath query. For more information access: (https://security-code-scan.github.io/#SCS0003)."
+              },
+              "fullDescription": {
+                "text": "(1/1) * Possible vulnerability detected: XPath Injection\nIf the user input is not properly filtered, a malicious user could extend the XPath query. For more information access: (https://security-code-scan.github.io/#SCS0003)."
+              },
+              "helpUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+              "name": "(1/1) * Possible vulnerability detected: XPath Injection"
+            },
+            {
+              "id": "HS-CSHARP-1",
+              "shortDescription": {
+                "text": "(1/1) * Possible vulnerability detected: Command Injection\nIf a malicious user controls either the FileName or Arguments, he might be able to execute unwanted commands or add unwanted argument. This behavior would not be possible if input parameter are validate against a white-list of characters. For more information access: (https://security-code-scan.github.io/#SCS0001)."
+              },
+              "fullDescription": {
+                "text": "(1/1) * Possible vulnerability detected: Command Injection\nIf a malicious user controls either the FileName or Arguments, he might be able to execute unwanted commands or add unwanted argument. This behavior would not be possible if input parameter are validate against a white-list of characters. For more information access: (https://security-code-scan.github.io/#SCS0001)."
+              },
+              "helpUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+              "name": "(1/1) * Possible vulnerability detected: Command Injection"
+            },
+            {
+              "id": "HS-CSHARP-38",
+              "shortDescription": {
+                "text": "(1/1) * Possible vulnerability detected: No Log Sensitive Information in console\nThe App logs information. Sensitive information should never be logged. For more information checkout the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory."
+              },
+              "fullDescription": {
+                "text": "(1/1) * Possible vulnerability detected: No Log Sensitive Information in console\nThe App logs information. Sensitive information should never be logged. For more information checkout the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory."
+              },
+              "helpUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+              "name": "(1/1) * Possible vulnerability detected: No Log Sensitive Information in console"
+            },
+            {
+              "id": "HS-LEAKS-26",
+              "shortDescription": {
+                "text": "(1/1) * Possible vulnerability detected: Hard-coded password\nThe software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. For more information checkout the CWE-798 (https://cwe.mitre.org/data/definitions/798.html) advisory."
+              },
+              "fullDescription": {
+                "text": "(1/1) * Possible vulnerability detected: Hard-coded password\nThe software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. For more information checkout the CWE-798 (https://cwe.mitre.org/data/definitions/798.html) advisory."
+              },
+              "helpUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+              "name": "(1/1) * Possible vulnerability detected: Hard-coded password"
+            },
+            {
+              "id": "HS-CSHARP-29",
+              "shortDescription": {
+                "text": "(1/1) * Possible vulnerability detected: SQL Injection LINQ\nMalicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database.. For more information access: (https://security-code-scan.github.io/#SCS0002)."
+              },
+              "fullDescription": {
+                "text": "(1/1) * Possible vulnerability detected: SQL Injection LINQ\nMalicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database.. For more information access: (https://security-code-scan.github.io/#SCS0002)."
+              },
+              "helpUri": "https://docs.horusec.io/docs/cli/analysis-tools/overview/",
+              "name": "(1/1) * Possible vulnerability detected: SQL Injection LINQ"
+            }
+          ],
+          "version": "2.8.0"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/bicepgoat.bicep"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/Functions/GetCloseStockPriceForSymbol.cs"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/Functions/GetOpenStockPriceForSymbol.cs"
+          }
+        },
+        {
+          "location": {
+            "uri": "coverage.xml"
+          }
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "(1/1) * Possible vulnerability detected: Hard-coded password\nThe software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. For more information checkout the CWE-798 (https://cwe.mitre.org/data/definitions/798.html) advisory."
+          },
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/bicepgoat.bicep"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "bypass: 'None'"
+                  },
+                  "startLine": 36,
+                  "startColumn": 8
+                }
+              }
+            }
+          ],
+          "ruleId": "HS-LEAKS-26"
+        },
+        {
+          "message": {
+            "text": "(1/1) * Possible vulnerability detected: SQL Injection LINQ\nMalicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database.. For more information access: (https://security-code-scan.github.io/#SCS0002)."
+          },
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/Functions/GetCloseStockPriceForSymbol.cs"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "var results = doc.SelectNodes(\"/Config/Devices/Device[id='\" + symbol + \"']\");"
+                  },
+                  "startLine": 57,
+                  "startColumn": 12
+                }
+              }
+            }
+          ],
+          "ruleId": "HS-CSHARP-29"
+        },
+        {
+          "message": {
+            "text": "(1/1) * Possible vulnerability detected: XPath Injection\nIf the user input is not properly filtered, a malicious user could extend the XPath query. For more information access: (https://security-code-scan.github.io/#SCS0003)."
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/Functions/GetCloseStockPriceForSymbol.cs"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "var doc = new XmlDocument {XmlResolver = null};"
+                  },
+                  "startLine": 55,
+                  "startColumn": 22
+                }
+              }
+            }
+          ],
+          "ruleId": "HS-CSHARP-2"
+        },
+        {
+          "message": {
+            "text": "(1/1) * Possible vulnerability detected: Command Injection\nIf a malicious user controls either the FileName or Arguments, he might be able to execute unwanted commands or add unwanted argument. This behavior would not be possible if input parameter are validate against a white-list of characters. For more information access: (https://security-code-scan.github.io/#SCS0001)."
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/Functions/GetOpenStockPriceForSymbol.cs"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "var p = new Process();"
+                  },
+                  "startLine": 52,
+                  "startColumn": 20
+                }
+              }
+            }
+          ],
+          "ruleId": "HS-CSHARP-1"
+        },
+        {
+          "message": {
+            "text": "(1/1) * Possible vulnerability detected: No Log Sensitive Information in console\nThe App logs information. Sensitive information should never be logged. For more information checkout the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "coverage.xml"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "ing.debug.dll\" path=\"microsoft.extensions.logging.debug.dll\" reason=\"no_symbols\" /\u003e"
+                  },
+                  "startLine": 57816,
+                  "startColumn": 47
+                }
+              }
+            }
+          ],
+          "ruleId": "HS-CSHARP-38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

@@ -1,0 +1,1399 @@
+<rules>
+    <rule>
+        <key>HS-CSHARP-1</key>
+        <name>Command Injection</name>
+        <description>
+            <![CDATA[If a malicious user controls either the FileName or Arguments, he might be able to execute unwanted commands or add unwanted argument. This behavior would not be possible if input parameter are validate against a white-list of characters. For more information access: (https://security-code-scan.github.io/#SCS0001). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#command-injection' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#command-injection</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#command-injection' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0001' target='_blank'>https://security-code-scan.github.io/#SCS0001</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-2</key>
+        <name>XPath Injection</name>
+        <description>
+            <![CDATA[If the user input is not properly filtered, a malicious user could extend the XPath query. For more information access: (https://security-code-scan.github.io/#SCS0003). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xpath-injection' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xpath-injection</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xpath-injection' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0003' target='_blank'>https://security-code-scan.github.io/#SCS0003</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-3</key>
+        <name>XML eXternal Entity Injection (XXE)</name>
+        <description>
+            <![CDATA[The XML parser is configured incorrectly. The operation could be vulnerable to XML eXternal Entity (XXE) processing. For more information access: (https://security-code-scan.github.io/#SCS0007). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-external-entity-injection-xxe' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-external-entity-injection-xxe</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-external-entity-injection-xxe' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0007' target='_blank'>https://security-code-scan.github.io/#SCS0007</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-4</key>
+        <name>Path Traversal</name>
+        <description>
+            <![CDATA[A path traversal attack (also known as directory traversal) aims to access files and directories that are stored outside the expected directory.By manipulating variables that reference files with &#8220;dot-dot-slash (../)&#8221; sequences and its variations or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system including application source code or configuration and critical system files. For more information access: (https://security-code-scan.github.io/#SCS0018). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#path-traversal' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#path-traversal</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#path-traversal' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0018' target='_blank'>https://security-code-scan.github.io/#SCS0018</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-5</key>
+        <name>SQL Injection WebControls</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information access: (https://security-code-scan.github.io/#SCS0014). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-webcontrols' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-webcontrols</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-webcontrols' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0014' target='_blank'>https://security-code-scan.github.io/#SCS0014</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-6</key>
+        <name>Weak Cipher Mode</name>
+        <description>
+            <![CDATA[The cipher provides no way to detect that the data has been tampered with. If the cipher text can be controlled by an attacker, it could be altered without detection. The use of AES in CBC mode with a HMAC is recommended guaranteeing integrity and confidentiality. For more information access: (https://security-code-scan.github.io/#SCS0013). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-mode' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-mode</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-mode' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0013' target='_blank'>https://security-code-scan.github.io/#SCS0013</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-7</key>
+        <name>Forms Authentication Cookieless Mode</name>
+        <description>
+            <![CDATA[Authentication cookies should not be sent in the URL. Doing so allows attackers to gain unauthorized access to authentication tokens (web server logs, referrer headers, and browser history) and more easily perform session fixation / hijacking attacks. For more information checkout the CWE-598 (https://cwe.mitre.org/data/definitions/598.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cookieless-mode' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cookieless-mode</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cookieless-mode' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/598.html' target='_blank'>https://cwe.mitre.org/data/definitions/598.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-8</key>
+        <name>Forms Authentication Cross App Redirects</name>
+        <description>
+            <![CDATA[Enabling cross-application redirects can allow unvalidated redirect attacks via the returnUrl parameter during the login process. Disable cross-application redirects to by setting the enableCrossAppRedirects attribute to false. For more information checkout the CWE-601 (https://cwe.mitre.org/data/definitions/601.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cross-app-redirects' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cross-app-redirects</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-cross-app-redirects' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/601.html' target='_blank'>https://cwe.mitre.org/data/definitions/601.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-9</key>
+        <name>Forms Authentication Weak Cookie Protection</name>
+        <description>
+            <![CDATA[Forms Authentication cookies must use strong encryption and message authentication code (MAC) validation to protect the cookie value from inspection and tampering. Configure the forms element&#8217;s protection attribute to All to enable cookie data validation and encryption. For more information checkout the CWE-565 (https://cwe.mitre.org/data/definitions/565.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-cookie-protection' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-cookie-protection</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-cookie-protection' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/565.html' target='_blank'>https://cwe.mitre.org/data/definitions/565.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-10</key>
+        <name>Forms Authentication Weak Timeout</name>
+        <description>
+            <![CDATA[Excessive authentication timeout values provide attackers with a large window of opportunity to hijack user&#8217;s authentication tokens. For more information checkout the CWE-613 (https://cwe.mitre.org/data/definitions/613.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-timeout' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-timeout</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#forms-authentication-weak-timeout' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/613.html' target='_blank'>https://cwe.mitre.org/data/definitions/613.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-11</key>
+        <name>Header Checking Disabled</name>
+        <description>
+            <![CDATA[Disabling the HTTP Runtime header checking protection opens the application up to HTTP Header Injection (aka Response Splitting) attacks. Enable the header checking protection by setting the httpRuntime element&#8217;s enableHeaderChecking attribute to true, which is the default value. For more information checkout the CWE-113 (https://cwe.mitre.org/data/definitions/113.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#header-checking-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#header-checking-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#header-checking-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/113.html' target='_blank'>https://cwe.mitre.org/data/definitions/113.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-12</key>
+        <name>Version Header Enabled</name>
+        <description>
+            <![CDATA[The Version HTTP response header sends the ASP.NET framework version to the client&#8217;s browser. This information can help an attacker identify vulnerabilities in the server&#8217;s framework version and should be disabled in production. Disable the version response header by setting the httpRuntime element&#8217;s enableVersionHeader attribute to false. For more information checkout the CWE-200 (https://cwe.mitre.org/data/definitions/200.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#version-header-enabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#version-header-enabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#version-header-enabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/200.html' target='_blank'>https://cwe.mitre.org/data/definitions/200.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-13</key>
+        <name>Event Validation Disabled</name>
+        <description>
+            <![CDATA[Event validation prevents unauthorized post backs in web form applications. Disabling this feature can allow attackers to forge requests from controls not visible or enabled on a given web form. Enable event validation by setting the page element&#8217;s eventValidation attribute to true. For more information checkout the CWE-807 (https://cwe.mitre.org/data/definitions/807.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#event-validation-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#event-validation-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#event-validation-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/807.html' target='_blank'>https://cwe.mitre.org/data/definitions/807.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-14</key>
+        <name>Weak Session Timeout</name>
+        <description>
+            <![CDATA[If session data is used by the application for authentication, excessive timeout values provide attackers with a large window of opportunity to hijack user&#8217;s session tokens. Configure the session timeout value to meet your organization&#8217;s timeout policy. For more information checkout the CWE-613 (https://cwe.mitre.org/data/definitions/613.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/613.html' target='_blank'>https://cwe.mitre.org/data/definitions/613.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-15</key>
+        <name>Weak Session Timeout</name>
+        <description>
+            <![CDATA[The session StateServer mode transports session data insecurely to a remote server. The remote server also does not require system authentication to access the session data for an application. This risk depends entirely on the sensitivity of the data stored in the user&#8217;s session. If the session data is considered sensitive, consider adding an external control (e.g. IPSEC) that provides mutual authentication and transport security. For more information checkout the CWE-319 (https://cwe.mitre.org/data/definitions/319.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout-1' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout-1</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-session-timeout-1' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/319.html' target='_blank'>https://cwe.mitre.org/data/definitions/319.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-16</key>
+        <name>Jwt Signature Validation Disabled</name>
+        <description>
+            <![CDATA[Web service APIs relying on JSON Web Tokens (JWT) for authentication and authorization must sign each JWT with a private key or secret. Each web service endpoint must require JWT signature validation prior to decoding and using the token to access protected resources. The values RequireExpirationTime, RequireSignedTokens, ValidateLifetime can&#8217;t was false. For more information checkout the CWE-347 (https://cwe.mitre.org/data/definitions/347.html) and CWE-613 (https://cwe.mitre.org/data/definitions/613.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#jwt-signature-validation-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#jwt-signature-validation-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#jwt-signature-validation-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/347.html' target='_blank'>https://cwe.mitre.org/data/definitions/347.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-17</key>
+        <name>Insecure Http Cookie Transport</name>
+        <description>
+            <![CDATA[Cookies containing authentication tokens, session tokens, and other state management credentials must be protected in transit across a network. Set the cookie options&#8217; Secure property to true to prevent the browser from transmitting cookies over HTTP. For more information checkout the CWE-614 (https://cwe.mitre.org/data/definitions/614.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-http-cookie-transport' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-http-cookie-transport</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-http-cookie-transport' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/614.html' target='_blank'>https://cwe.mitre.org/data/definitions/614.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-18</key>
+        <name>Http Cookie Accessible Via Script</name>
+        <description>
+            <![CDATA[Cookies containing authentication tokens, session tokens, and other state management credentials should be protected from malicious JavaScript running in the browser. Setting the httpOnly attribute to false can allow attackers to inject malicious scripts into the site and extract authentication cookie values to a remote server. Configure the cookie options&#8217; httpOnly property to true, which prevents cookie access from scripts running in the browser. For more information checkout the CWE-1004 (https://cwe.mitre.org/data/definitions/1004.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#http-cookie-accessible-via-script' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#http-cookie-accessible-via-script</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#http-cookie-accessible-via-script' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/1004.html' target='_blank'>https://cwe.mitre.org/data/definitions/1004.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-19</key>
+        <name>Directory Listing Enabled</name>
+        <description>
+            <![CDATA[Directory listing provides a complete index of the resources located in a web directory. Enabling directory listing can expose sensitive resources such as application binaries, configuration files, and static content that should not be exposed. Unless directory listing is required to meet the application&#8217;s functional requirements, disable the listing by setting the directoryBrowse element&#8217;s enabled attribute to false. For more information checkout the CWE-548 (https://cwe.mitre.org/data/definitions/548.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#directory-listing-enabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#directory-listing-enabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#directory-listing-enabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/548.html' target='_blank'>https://cwe.mitre.org/data/definitions/548.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-20</key>
+        <name>Ldap Authentication Disabled</name>
+        <description>
+            <![CDATA[Disabling LDAP Authentication configures insecure connections to the backend LDAP provider. Using the DirectoryEntry AuthenticationType property&#8217;s Anonymous or None option allows an anonymous or basic authentication connection to the LDAP provider. Set the the DirectoryEntry AuthenticationType property to Secure, which requests Kerberos authentication under the security context of the calling thread or as a provider username and password. For more information checkout the CWE-287 (https://cwe.mitre.org/data/definitions/287.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-authentication-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-authentication-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-authentication-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/287.html' target='_blank'>https://cwe.mitre.org/data/definitions/287.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-21</key>
+        <name>Certificate Validation Disabled</name>
+        <description>
+            <![CDATA[Disabling certificate validation is common in testing and development environments. Quite often, this is accidentally deployed to production, leaving the application vulnerable to man-in-the-middle attacks on insecure networks. For more information checkout the CWE-295 (https://cwe.mitre.org/data/definitions/295.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-22</key>
+        <name>Action Request Validation Disabled</name>
+        <description>
+            <![CDATA[Request validation performs blacklist input validation for XSS payloads found in form and URL request parameters. Request validation has known bypass issues and does not prevent all XSS attacks, but it does provide a strong countermeasure for most payloads targeting a HTML context. For more information checkout the CWE-20 (https://cwe.mitre.org/data/definitions/20.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#action-request-validation-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#action-request-validation-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#action-request-validation-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/20.html' target='_blank'>https://cwe.mitre.org/data/definitions/20.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-23</key>
+        <name>Xml Document External Entity Expansion</name>
+        <description>
+            <![CDATA[XML External Entity (XXE) vulnerabilities occur when applications process untrusted XML data without disabling external entities and DTD processing. Processing untrusted XML data with a vulnerable parser can allow attackers to extract data from the server, perform denial of service attacks, and in some cases gain remote code execution. The XmlDocument class is vulnerable to XXE attacks when setting the XmlResolver property to resolve external entities. To prevent XmlDocument XXE attacks, set the XmlResolver property to null. For more information checkout the CWE-611 (https://cwe.mitre.org/data/definitions/611.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-document-external-entity-expansion' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-document-external-entity-expansion</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-document-external-entity-expansion' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/611.html' target='_blank'>https://cwe.mitre.org/data/definitions/611.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-24</key>
+        <name>Ldap Injection Filter Assignment</name>
+        <description>
+            <![CDATA[LDAP Injection vulnerabilities occur when untrusted data is concatenated into a LDAP Path or Filter expression without properly escaping control characters. This can allow attackers to change the meaning of an LDAP query and gain access to resources for which they are not authorized. For more information checkout the CWE-90 (https://cwe.mitre.org/data/definitions/90.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-filter-assignment' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-filter-assignment</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-filter-assignment' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/90.html' target='_blank'>https://cwe.mitre.org/data/definitions/90.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-25</key>
+        <name>Sql Injection: Dynamic NHibernate Query</name>
+        <description>
+            <![CDATA[Concatenating untrusted data into a dynamic SQL string and calling vulnerable NHibernate Framework methods can allow SQL Injection. To ensure calls to vulnerable NHibernate Framework methods are parameterized, pass positional or named parameters in the statement. The following NHibernate methods allow for raw SQL queries to be executed: CreateQuery CreateSqlQuery To ensure calls to vulnerable NHibernate methods are parameterized, use named parameters in the raw SQL query. Then, set the named parameter values when executing the query. For more information checkout the CWE-89 (https://cwe.mitre.org/data/definitions/89.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-dynamic-nhibernate-query' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-dynamic-nhibernate-query</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-dynamic-nhibernate-query' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/89.html' target='_blank'>https://cwe.mitre.org/data/definitions/89.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-26</key>
+        <name>Ldap Injection Directory Searcher</name>
+        <description>
+            <![CDATA[LDAP Injection vulnerabilities occur when untrusted data is concatenated into a LDAP Path or Filter expression without properly escaping control characters. This can allow attackers to change the meaning of an LDAP query and gain access to resources for which they are not authorized. For more information checkout the CWE-90 (https://cwe.mitre.org/data/definitions/90.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-searcher' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-searcher</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-searcher' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/90.html' target='_blank'>https://cwe.mitre.org/data/definitions/90.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-27</key>
+        <name>Ldap Injection Path Assignment</name>
+        <description>
+            <![CDATA[LDAP Injection vulnerabilities occur when untrusted data is concatenated into a LDAP Path or Filter expression without properly escaping control characters. This can allow attackers to change the meaning of an LDAP query and gain access to resources for which they are not authorized. For more information checkout the CWE-90 (https://cwe.mitre.org/data/definitions/90.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-path-assignment' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-path-assignment</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-path-assignment' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/90.html' target='_blank'>https://cwe.mitre.org/data/definitions/90.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-28</key>
+        <name>LDAP Injection</name>
+        <description>
+            <![CDATA[The dynamic value passed to the LDAP query should be validated. For more information access: (https://security-code-scan.github.io/#SCS0031). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0031' target='_blank'>https://security-code-scan.github.io/#SCS0031</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-29</key>
+        <name>SQL Injection LINQ</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database.. For more information access: (https://security-code-scan.github.io/#SCS0002). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-linq' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-linq</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-linq' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0002' target='_blank'>https://security-code-scan.github.io/#SCS0002</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-30</key>
+        <name>Insecure Deserialization</name>
+        <description>
+            <![CDATA[Arbitrary code execution, full application compromise or denial of service. An attacker may pass specially crafted serialized .NET object of specific class that will execute malicious code during the construction of the object. For more information access: (https://security-code-scan.github.io/#SCS0028). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-deserialization' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-deserialization</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#insecure-deserialization' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0028' target='_blank'>https://security-code-scan.github.io/#SCS0028</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-31</key>
+        <name>SQL Injection Enterprise Library Data</name>
+        <description>
+            <![CDATA[Arbitrary code execution, full application compromise or denial of service. An attacker may pass specially crafted serialized .NET object of specific class that will execute malicious code during the construction of the object. For more information access: (https://security-code-scan.github.io/#SCS0036). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-enterprise-library-data' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-enterprise-library-data</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-enterprise-library-data' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0036' target='_blank'>https://security-code-scan.github.io/#SCS0036</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-32</key>
+        <name>CQL Injection Cassandra</name>
+        <description>
+            <![CDATA[Arbitrary code execution, full application compromise or denial of service. An attacker may pass specially crafted serialized .NET object of specific class that will execute malicious code during the construction of the object. For more information access: (https://security-code-scan.github.io/#SCS0038). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cql-injection-cassandra' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cql-injection-cassandra</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cql-injection-cassandra' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0038' target='_blank'>https://security-code-scan.github.io/#SCS0038</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-33</key>
+        <name>Password Complexity</name>
+        <description>
+            <![CDATA[PasswordValidator should have at least two requirements for better security, the RequiredLength property must be set with a minimum value of 8. For more information access: (https://security-code-scan.github.io/#SCS0027). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#password-complexity' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#password-complexity</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#password-complexity' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0027' target='_blank'>https://security-code-scan.github.io/#SCS0027</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-34</key>
+        <name>Cookie Without SSL Flag</name>
+        <description>
+            <![CDATA[It is recommended to specify the Secure flag to new cookie. The Secure flag is a directive to the browser to make sure that the cookie is not sent by unencrypted channel. For more information access: (https://security-code-scan.github.io/#SCS0008) and (https://cwe.mitre.org/data/definitions/614.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-ssl-flag' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-ssl-flag</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-ssl-flag' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0008' target='_blank'>https://security-code-scan.github.io/#SCS0008</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-35</key>
+        <name>Cookie Without HttpOnly Flag</name>
+        <description>
+            <![CDATA[It is recommended to specify the HttpOnly flag to new cookie. For more information access: (https://security-code-scan.github.io/#SCS0009) or (https://cwe.mitre.org/data/definitions/1004.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-httponly-flag' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-httponly-flag</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cookie-without-httponly-flag' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0009' target='_blank'>https://security-code-scan.github.io/#SCS0009</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-36</key>
+        <name>No input variable</name>
+        <description>
+            <![CDATA[The application appears to allow XSS through an unencrypted / unauthorized input variable.  <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-input-variable' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-input-variable</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-input-variable' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-37</key>
+        <name>Identity Weak Password Complexity</name>
+        <description>
+            <![CDATA[Weak passwords can allow attackers to easily guess user passwords using wordlist or brute force attacks. Enforcing a strict password complexity policy mitigates these attacks by significantly increasing the time to guess a user&#8217;s valid password. For more information checkout the CWE-521 (https://cwe.mitre.org/data/definitions/521.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-weak-password-complexity' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-weak-password-complexity</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-weak-password-complexity' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/521.html' target='_blank'>https://cwe.mitre.org/data/definitions/521.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-38</key>
+        <name>No Log Sensitive Information in console</name>
+        <description>
+            <![CDATA[The App logs information. Sensitive information should never be logged. For more information checkout the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-in-console' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-in-console</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-in-console' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/532.html' target='_blank'>https://cwe.mitre.org/data/definitions/532.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-39</key>
+        <name>OutputCache Conflict</name>
+        <description>
+            <![CDATA[Having the annotation [OutputCache] will disable the annotation [Authorize] for the requests following the first one. For more information access: (https://security-code-scan.github.io/#SCS0019). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#outputcache-conflict' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#outputcache-conflict</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#outputcache-conflict' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0019' target='_blank'>https://security-code-scan.github.io/#SCS0019</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-40</key>
+        <name>Open Redirect</name>
+        <description>
+            <![CDATA[Your site may be used in phishing attacks. An attacker may craft a trustworthy looking link to your site redirecting a victim to a similar looking malicious site: &#8216; <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#open-redirect' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#open-redirect</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#open-redirect' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-41</key>
+        <name>Request Validation Disabled (Attribute)</name>
+        <description>
+            <![CDATA[Request validation is disabled. Request validation allows the filtering of some XSS patterns submitted to the application. For more information access: (https://security-code-scan.github.io/#SCS0017). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-attribute' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-attribute</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-attribute' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0017' target='_blank'>https://security-code-scan.github.io/#SCS0017</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-42</key>
+        <name>SQL Injection OLE DB</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information access: (https://security-code-scan.github.io/#SCS0020)." <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-ole-db' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-ole-db</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-ole-db' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0020' target='_blank'>https://security-code-scan.github.io/#SCS0020</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-43</key>
+        <name>Request Validation Disabled (Configuration File)</name>
+        <description>
+            <![CDATA[The validateRequest which provides additional protection against XSS is disabled in configuration file. For more information access: (https://security-code-scan.github.io/#SCS0017) or (https://cwe.mitre.org/data/definitions/20.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-configuration-file' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-configuration-file</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-disabled-configuration-file' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0017' target='_blank'>https://security-code-scan.github.io/#SCS0017</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-44</key>
+        <name>SQL Injection MsSQL Data Provider</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information access: ( <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-mssql-data-provider' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-mssql-data-provider</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-mssql-data-provider' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-45</key>
+        <name>Request validation is enabled only for pages</name>
+        <description>
+            <![CDATA[The requestValidationMode which provides additional protection against XSS is enabled only for pages, not for all HTTP requests in configuration file. For more information access: (https://security-code-scan.github.io/#SCS0030). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-is-enabled-only-for-pages' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-is-enabled-only-for-pages</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#request-validation-is-enabled-only-for-pages' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0030' target='_blank'>https://security-code-scan.github.io/#SCS0030</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-46</key>
+        <name>SQL Injection Entity Framework</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database, please use SqlParameter to create query with parameters. For more information access: (https://security-code-scan.github.io/#SCS0035) or ( <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-entity-framework' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-entity-framework</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-entity-framework' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0035' target='_blank'>https://security-code-scan.github.io/#SCS0035</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-47</key>
+        <name>View State Not Encrypted</name>
+        <description>
+            <![CDATA[The viewStateEncryptionMode is not set to Always in configuration file. Web Forms controls use hidden base64 encoded fields to store state information. If sensitive information is stored there it may be leaked to the client side. For more information access: (https://security-code-scan.github.io/#SCS0023) or (https://cwe.mitre.org/data/definitions/200.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-not-encrypted' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-not-encrypted</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-not-encrypted' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0023' target='_blank'>https://security-code-scan.github.io/#SCS0023</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-48</key>
+        <name>SQL Injection Nhibernate</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information access: (https://security-code-scan.github.io/#SCS0037). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-nhibernate' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-nhibernate</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-nhibernate' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0037' target='_blank'>https://security-code-scan.github.io/#SCS0037</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-49</key>
+        <name>View State MAC Disabled</name>
+        <description>
+            <![CDATA[The enableViewStateMac is disabled in configuration file. (This feature cannot be disabled starting .NET 4.5.1). The view state could be altered by an attacker. For more information access: (https://security-code-scan.github.io/#SCS0024) or (https://cwe.mitre.org/data/definitions/807.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-mac-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-mac-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#view-state-mac-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0024' target='_blank'>https://security-code-scan.github.io/#SCS0024</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-50</key>
+        <name>SQL Injection Npgsql</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information access: (https://security-code-scan.github.io/#SCS0039). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-npgsql' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-npgsql</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-npgsql' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0039' target='_blank'>https://security-code-scan.github.io/#SCS0039</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-51</key>
+        <name>Certificate Validation Disabled</name>
+        <description>
+            <![CDATA[Disabling certificate validation is often used to connect easily to a host that is not signed by a root certificate authority. As a consequence, this is vulnerable to Man-in-the-middle attacks since the client will trust any certificate. For more information access: (https://security-code-scan.github.io/#SCS0004)." <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled-1' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled-1</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#certificate-validation-disabled-1' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0004' target='_blank'>https://security-code-scan.github.io/#SCS0004</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-52</key>
+        <name>Weak cipher algorithm</name>
+        <description>
+            <![CDATA[Broken or deprecated ciphers have typically known weakness. A attacker might be able to brute force the secret key use for the encryption. The confidentiality and integrity of the information encrypted is at risk. For more information access: (https://security-code-scan.github.io/#SCS0010). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-algorithm' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-algorithm</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-cipher-algorithm' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0010' target='_blank'>https://security-code-scan.github.io/#SCS0010</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-53</key>
+        <name>No use Html.Raw</name>
+        <description>
+            <![CDATA[The application uses the potentially dangerous Html.Raw construct in conjunction with a user-supplied variable. The recommendation is to avoid using HTML assembly, but if it is extremely necessary to allow Html, we suggest the following: support only a fixed subset of Html, after the user submits content, analyze the Html and filter it in a whitelist of allowed tags and attributes. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory." <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-htmlraw' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-htmlraw</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-htmlraw' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-54</key>
+        <name>No log sensitive information debug mode</name>
+        <description>
+            <![CDATA[The application is configured to display standard .NET errors. This can provide the attacker with useful information and should not be used in a production application.  <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-debug-mode' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-debug-mode</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-log-sensitive-information-debug-mode' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-55</key>
+        <name>No return string concat in controller</name>
+        <description>
+            <![CDATA[A potential Cross-Site Scripting (XSS) was found. The endpoint returns a variable from the client entry that has not been coded. Always encode untrusted input before output, regardless of validation or cleaning performed.  <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-return-string-concat-in-controller' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-return-string-concat-in-controller</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-return-string-concat-in-controller' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-56</key>
+        <name>SQL Injection OdbcCommand</name>
+        <description>
+            <![CDATA[Malicious user might get direct read and/or write access to the database. If the database is poorly configured the attacker might even get Remote Code Execution (RCE) on the machine running the database. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory." <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-odbccommand' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-odbccommand</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#sql-injection-odbccommand' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-57</key>
+        <name>Weak hashing function5 or sha1</name>
+        <description>
+            <![CDATA[MD5 or SHA1 have known collision weaknesses and are no longer considered strong hashing algorithms. For more information checkout the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function5-or-sha1' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function5-or-sha1</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function5-or-sha1' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-58</key>
+        <name>Weak hashing function DES Crypto</name>
+        <description>
+            <![CDATA[DES Crypto have known collision weaknesses and are no longer considered strong hashing algorithms. For more information checkout the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function-des-crypto' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function-des-crypto</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-hashing-function-des-crypto' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-59</key>
+        <name>No Use Cipher mode</name>
+        <description>
+            <![CDATA[This mode is not recommended because it opens the door to various security exploits. If the plain text to be encrypted contains substantial repetitions, it is possible that the cipher text will be broken one block at a time. You can also use block analysis to determine the encryption key. In addition, an active opponent can replace and exchange individual blocks without detection, which allows the blocks to be saved and inserted into the stream at other points without detection. ECB and OFB mode will produce the same result for identical blocks. The use of AES in CBC mode with an HMAC is recommended, ensuring integrity and confidentiality.  <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-cipher-mode' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-cipher-mode</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#no-use-cipher-mode' target='_blank'> Rule Docs</a> <br/> <a href='' target='_blank'></a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-60</key>
+        <name>Debug Build Enabled</name>
+        <description>
+            <![CDATA[Binaries compiled in debug mode can leak detailed stack traces and debugging messages to attackers. Disable debug builds by setting the debug attribute to false. For more information checkout the CWE-11 (https://cwe.mitre.org/data/definitions/11.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#debug-build-enabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#debug-build-enabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#debug-build-enabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/11.html' target='_blank'>https://cwe.mitre.org/data/definitions/11.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-61</key>
+        <name>Vulnerable Package Reference</name>
+        <description>
+            <![CDATA[Dependencies on open source frameworks and packages introduce additional vulnerabilities into the runtime environment. Vulnerabilities in open source libraries are continuously discovered and documented in publicly available vulnerability databases. Attackers can recognize a package being used by an application, and leverage known vulnerabilities in the library to attack the application. For more information checkout the CWE-937 (https://cwe.mitre.org/data/definitions/937.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#vulnerable-package-reference' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#vulnerable-package-reference</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#vulnerable-package-reference' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/937.html' target='_blank'>https://cwe.mitre.org/data/definitions/937.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-62</key>
+        <name>Cors Allow Origin Wild Card</name>
+        <description>
+            <![CDATA[Cross-Origin Resource Sharing (CORS) allows a service to disable the browser&#8217;s Same-origin policy, which prevents scripts on an attacker-controlled domain from accessing resources and data hosted on a different domain. The CORS Access-Control-Allow-Origin HTTP header specifies the domain with permission to invoke a cross-origin service and view the response data. Configuring the Access-Control-Allow-Origin header with a wildcard (*) can allow code running on an attacker-controlled domain to view responses containing sensitive data. For more information checkout the CWE-942 (https://cwe.mitre.org/data/definitions/942.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cors-allow-origin-wild-card' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cors-allow-origin-wild-card</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#cors-allow-origin-wild-card' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/942.html' target='_blank'>https://cwe.mitre.org/data/definitions/942.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-63</key>
+        <name>Missing Anti Forgery Token Attribute</name>
+        <description>
+            <![CDATA[Cross Site Request Forgery attacks occur when a victim authenticates to a target web site and then visits a malicious web page. The malicious web page then sends a fake HTTP request (GET, POST, etc.) back to the target website. The victim&#8217;s valid authentication cookie from the target web site is automatically included in the malicious request, sent to the target web site, and processed as a valid transaction under the victim&#8217;s identity. For more information checkout the CWE-352 (https://cwe.mitre.org/data/definitions/352.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#missing-anti-forgery-token-attribute' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#missing-anti-forgery-token-attribute</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#missing-anti-forgery-token-attribute' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/352.html' target='_blank'>https://cwe.mitre.org/data/definitions/352.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-64</key>
+        <name>Unvalidated Web Forms Redirect</name>
+        <description>
+            <![CDATA[Passing unvalidated redirect locations to the Response.Redirect method can allow attackers to send users to malicious web sites. This can allow attackers to perform phishing attacks and distribute malware to victims. For more information checkout the CWE-601 (https://cwe.mitre.org/data/definitions/601.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unvalidated-web-forms-redirect' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unvalidated-web-forms-redirect</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unvalidated-web-forms-redirect' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/601.html' target='_blank'>https://cwe.mitre.org/data/definitions/601.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-65</key>
+        <name>Identity Password Lockout Disabled</name>
+        <description>
+            <![CDATA[Password lockout mechanisms help prevent continuous brute force attacks again user accounts by disabling an account for a period of time after a number of invalid attempts. The ASP.NET Identity SignInManager protects against brute force attacks if the lockout parameter is set to true. For more information checkout the CWE-307 (https://cwe.mitre.org/data/definitions/307.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-password-lockout-disabled' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-password-lockout-disabled</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#identity-password-lockout-disabled' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/307.html' target='_blank'>https://cwe.mitre.org/data/definitions/307.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-66</key>
+        <name>Raw Inline Expression</name>
+        <description>
+            <![CDATA[Data is written to the browser using a raw write: <%= var %>. This can result in Cross-Site Scripting (XSS) vulnerabilities if the data source is considered untrusted or dynamic (request parameters, database, web service, etc.). Instead of using a raw write, use the inline HTML encoded shortcut (<%: var %>) to automatically HTML encode data before writing it to the browser. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-inline-expression' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-inline-expression</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-inline-expression' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-67</key>
+        <name>Raw Binding Expression</name>
+        <description>
+            <![CDATA[Data is written to the browser using a raw binding expression: <%# Item.Variable %>. This can result in Cross-Site Scripting (XSS) vulnerabilities if the data source is considered untrusted or dynamic (request parameters, database, web service, etc.). Instead of using a raw binding expression, use the HTML encoded binding shortcut (<%#: Item.Variable %>) to automatically HTML encode data before writing it to the browser. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-binding-expression' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-binding-expression</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-binding-expression' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-68</key>
+        <name>Raw Write Literal Method</name>
+        <description>
+            <![CDATA[Data is written to the browser using the raw WriteLiteral method. This can result in Cross-Site Scripting (XSS) vulnerabilities if the data source is considered untrusted or dynamic (request parameters, database, web service, etc.). Instead of using the raw WriteLiteral method, use a Razor helper that performs automatic HTML encoding before writing it to the browser. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-write-literal-method' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-write-literal-method</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#raw-write-literal-method' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-69</key>
+        <name>Unencoded Web Forms Property</name>
+        <description>
+            <![CDATA[Data is written to the browser using a WebForms property that does not perform output encoding. This can result in Cross-Site Scripting (XSS) vulnerabilities if the data source is considered untrusted or dynamic (request parameters, database, web service, etc.). WebForms controls are often found in HTML contexts, but can also appear in other contexts such as JavaScript, HTML Attribute, or URL. Fixing the vulnerability requires the appropriate Web Protection Library (aka AntiXSS) context-specific method to encode the data before setting the WebForms property. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-web-forms-property' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-web-forms-property</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-web-forms-property' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-70</key>
+        <name>Unencoded Label Text</name>
+        <description>
+            <![CDATA[Data is written to the browser using the raw Label.Text method. This can result in Cross-Site Scripting (XSS) vulnerabilities if the data source is considered untrusted or dynamic (request parameters, database, web service, etc.). Label controls are often found in HTML contexts, but can also appear in other contexts such as JavaScript, HTML Attribute, or URL. Fixing the vulnerability requires the appropriate Web Protection Library (aka AntiXSS) context-specific method to encode the data before setting the Label.Text property. For more information checkout the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-label-text' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-label-text</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#unencoded-label-text' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-71</key>
+        <name>Weak Random Number Generator</name>
+        <description>
+            <![CDATA[The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For more information access: (https://security-code-scan.github.io/#SCS0005) or (https://cwe.mitre.org/data/definitions/338.html). <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-random-number-generator' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-random-number-generator</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-random-number-generator' target='_blank'> Rule Docs</a> <br/> <a href='https://security-code-scan.github.io/#SCS0005' target='_blank'>https://security-code-scan.github.io/#SCS0005</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-72</key>
+        <name>Weak Rsa Key Length</name>
+        <description>
+            <![CDATA[Due to advances in cryptanalysis attacks and cloud computing capabilities, the National Institute of Standards and Technology (NIST) deprecated 1024-bit RSA keys on January 1, 2011. The Certificate Authority Browser Forum, along with the latest version of all browsers, currently mandates a minimum key size of 2048-bits for all RSA keys. For more information checkout the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-rsa-key-length' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-rsa-key-length</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#weak-rsa-key-length' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-73</key>
+        <name>Xml Reader External Entity Expansion</name>
+        <description>
+            <![CDATA[XML External Entity (XXE) vulnerabilities occur when applications process untrusted XML data without disabling external entities and DTD processing. Processing untrusted XML data with a vulnerable parser can allow attackers to extract data from the server, perform denial of service attacks, and in some cases gain remote code execution. The XmlReaderSettings and XmlTextReader classes are vulnerable to XXE attacks when setting the DtdProcessing property to DtdProcessing.Parse or the ProhibitDtd property to false.\n\n \n\nTo prevent XmlReader XXE attacks, avoid using the deprecated ProhibitDtd property. Set the DtdProcessing property to DtdProcessing.Prohibit. For more information checkout the CWE-611 (https://cwe.mitre.org/data/definitions/611.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-reader-external-entity-expansion' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-reader-external-entity-expansion</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#xml-reader-external-entity-expansion' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/611.html' target='_blank'>https://cwe.mitre.org/data/definitions/611.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-CSHARP-74</key>
+        <name>Ldap Injection Directory Entry</name>
+        <description>
+            <![CDATA[LDAP Injection vulnerabilities occur when untrusted data is concatenated into a LDAP Path or Filter expression without properly escaping control characters. This can allow attackers to change the meaning of an LDAP query and gain access to resources for which they are not authorized. Fixing the LDAP Injection Directory Entry vulnerability requires untrusted data to be encoded using the appropriate Web Protection Library (aka AntiXSS) LDAP encoding method: Encoder.LdapDistinguishedNameEncode(). For more information checkout the CWE-90 (https://cwe.mitre.org/data/definitions/90.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-entry' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-entry</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-csharp#ldap-injection-directory-entry' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/90.html' target='_blank'>https://cwe.mitre.org/data/definitions/90.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-1</key>
+        <name>No Log Sensitive Information in console</name>
+        <description>
+            <![CDATA[The App logs information. Sensitive information should never be logged. For more information check out the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-log-sensitive-information-in-console' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-log-sensitive-information-in-console</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-log-sensitive-information-in-console' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/532.html' target='_blank'>https://cwe.mitre.org/data/definitions/532.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-2</key>
+        <name>No use eval</name>
+        <description>
+            <![CDATA[The eval function is extremely dangerous. Because if any user input is not handled correctly and passed to it, it will be possible to execute code remotely in the context of your application (RCE - Remote Code Executuion). For more information check out the CWE-94 (https://cwe.mitre.org/data/definitions/94.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-eval' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-eval</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-eval' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/94.html' target='_blank'>https://cwe.mitre.org/data/definitions/94.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-3</key>
+        <name>No disable tls reject unauthorized</name>
+        <description>
+            <![CDATA[If the NODE_TLS_REJECT_UNAUTHORIZED option is disabled, the Node.js server will accept certificates that are self-signed, allowing an attacker to bypass the TLS security layer. For more information check out the CWE-295 (https://cwe.mitre.org/data/definitions/295.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-tls-reject-unauthorized' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-tls-reject-unauthorized</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-tls-reject-unauthorized' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-4</key>
+        <name>No use MD5 hashing</name>
+        <description>
+            <![CDATA[The MD5 hash algorithm that was used is considered weak. It can also cause hash collisions. It is always recommended to use some CHF (Cryptographic Hash Function), which is mathematically strong and not reversible. SHA512 would be the most recommended hash for storing the password and it is also important to adopt some type of Salt, so that the Hash is more secure. For more information check out the CWE-327 (https://cwe.mitre.org/data/definitions/327.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-md5-hashing' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-md5-hashing</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-md5-hashing' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/327.html' target='_blank'>https://cwe.mitre.org/data/definitions/327.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-5</key>
+        <name>No use SAH1 hashing</name>
+        <description>
+            <![CDATA[The SHA1 hash algorithm that was used is considered weak. It can also cause hash collisions. It is always recommended to use some CHF (Cryptographic Hash Function), which is mathematically strong and not reversible. SHA512 would be the most recommended hash for storing the password and it is also important to adopt some type of Salt, so that the Hash is more secure. For more information check out the CWE-327 (https://cwe.mitre.org/data/definitions/327.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-sah1-hashing' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-sah1-hashing</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-sah1-hashing' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/327.html' target='_blank'>https://cwe.mitre.org/data/definitions/327.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-6</key>
+        <name>No use weak random number generator</name>
+        <description>
+            <![CDATA[When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information. As the Math.random() function relies on a weak pseudorandom number generator, this function should not be used for security-critical applications or for protecting sensitive data. In such context, a cryptographically strong pseudorandom number generator (CSPRNG) should be used instead. For more information check out the CWE-338 (https://cwe.mitre.org/data/definitions/338.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-weak-random-number-generator' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-weak-random-number-generator</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-weak-random-number-generator' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/338.html' target='_blank'>https://cwe.mitre.org/data/definitions/338.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-7</key>
+        <name>No read file using data from request</name>
+        <description>
+            <![CDATA[User data passed untreated to the &#8216;createReadStream&#8217; function can cause a Directory Traversal attack. This attack exploits the lack of security, with the attacker gaining unauthorized access to the file system. For more information check out the CWE-35 (https://cwe.mitre.org/data/definitions/35.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-read-file-using-data-from-request' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-read-file-using-data-from-request</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-read-file-using-data-from-request' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/35.html' target='_blank'>https://cwe.mitre.org/data/definitions/35.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-8</key>
+        <name>No create read stream using data from request</name>
+        <description>
+            <![CDATA[User data passed untreated to the &#8216;createReadStream&#8217; function can cause a Directory Traversal attack. This attack exploits the lack of security, with the attacker gaining unauthorized access to the file system. For more information check  out the CWE-35 (https://cwe.mitre.org/data/definitions/35.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-create-read-stream-using-data-from-request' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-create-read-stream-using-data-from-request</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-create-read-stream-using-data-from-request' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/35.html' target='_blank'>https://cwe.mitre.org/data/definitions/35.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-9</key>
+        <name>SQL Injection Using params</name>
+        <description>
+            <![CDATA[Passing untreated parameters to queries in the database can cause an injection of SQL / NoSQL. The attacker is able to insert a custom and improper SQL statement through the data entry of an application. For more information check out the CWE-89 (https://cwe.mitre.org/data/definitions/89.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection-using-params' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection-using-params</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection-using-params' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/89.html' target='_blank'>https://cwe.mitre.org/data/definitions/89.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-10</key>
+        <name>XML parsers should not be vulnerable to XXE attacks</name>
+        <description>
+            <![CDATA[XML specification allows the use of entities that can be internal or external (file system / network access &#8230;) which could lead to vulnerabilities such as confidential file disclosures or SSRFs. For more information check out the CWE-827 (https://cwe.mitre.org/data/definitions/827.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#xml-parsers-should-not-be-vulnerable-to-xxe-attacks' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#xml-parsers-should-not-be-vulnerable-to-xxe-attacks</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#xml-parsers-should-not-be-vulnerable-to-xxe-attacks' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/827.html' target='_blank'>https://cwe.mitre.org/data/definitions/827.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-11</key>
+        <name>Origins should be verified during cross-origin communications</name>
+        <description>
+            <![CDATA[Browsers allow message exchanges between Window objects of different origins. Because any window can send / receive messages from other window it is important to verify the sender&#8217;s / receiver&#8217;s identity: When sending message with postMessage method, the identity&#8217;s receiver should be defined (the wildcard keyword (*) should not be used).\nWhen receiving message with message event, the sender&#8217;s identity should be verified using the origin and possibly source properties. For more information check out the OWASP A2:2017 (https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication) and (https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#origins-should-be-verified-during-cross-origin-communications' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#origins-should-be-verified-during-cross-origin-communications</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#origins-should-be-verified-during-cross-origin-communications' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication' target='_blank'>https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-12</key>
+        <name>Weak SSL/TLS protocols should not be used</name>
+        <description>
+            <![CDATA[Older versions of SSL/TLS protocol like "SSLv3" have been proven to be insecure. This rule raises an issue when an SSL/TLS context is created with an insecure protocol version (ie: a protocol different from "TLSv1.2", "TLSv1.3", "DTLSv1.2" or "DTLSv1.3"). For more information check out the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) and CWE-327 (https://cwe.mitre.org/data/definitions/327.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#weak-ssltls-protocols-should-not-be-used' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#weak-ssltls-protocols-should-not-be-used</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#weak-ssltls-protocols-should-not-be-used' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-13</key>
+        <name>Web SQL databases should not be used</name>
+        <description>
+            <![CDATA[The Web SQL Database standard never saw the light of day. It was first formulated, then deprecated by the W3C and was only implemented in some browsers. (It is not supported in Firefox or IE.)\n\nFurther, the use of a Web SQL Database poses security concerns, since you only need its name to access such a database. For more information check out the OWSAP A3:2017 (https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html) and A9:2017 (https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#web-sql-databases-should-not-be-used' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#web-sql-databases-should-not-be-used</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#web-sql-databases-should-not-be-used' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-14</key>
+        <name>Local storage should not be used</name>
+        <description>
+            <![CDATA[Session storage and local storage are HTML 5 features which allow developers to easily store megabytes of data client-side, as opposed to the 4Kb cookies can accommodate. While useful to speed applications up on the client side, it can be dangerous to store sensitive information this way because the data is not encrypted by default and any script on the page may access it. This rule raises an issue when the localStorage and sessionStorage API&#8217;s are used. For more information check out the OWSAP A3:2017 (https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#local-storage-should-not-be-used' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#local-storage-should-not-be-used</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#local-storage-should-not-be-used' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-15</key>
+        <name>Debugger statements should not be used</name>
+        <description>
+            <![CDATA[The debugger statement can be placed anywhere in procedures to suspend execution. Using the debugger statement is similar to setting a breakpoint in the code. By definition such statement must absolutely be removed from the source code to prevent any unexpected behavior or added vulnerability to attacks in production. For more information check out the CWE-489 (https://cwe.mitre.org/data/definitions/489.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#debugger-statements-should-not-be-used' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#debugger-statements-should-not-be-used</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#debugger-statements-should-not-be-used' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/489.html' target='_blank'>https://cwe.mitre.org/data/definitions/489.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-16</key>
+        <name>Alert statements should not be used</name>
+        <description>
+            <![CDATA[alert(&#8230;) as well as confirm(&#8230;) and prompt(&#8230;) can be useful for debugging during development, but in production mode this kind of pop-up could expose sensitive information to attackers, and should never be displayed. For more information check out the CWE-489 (https://cwe.mitre.org/data/definitions/489.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#alert-statements-should-not-be-used' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#alert-statements-should-not-be-used</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#alert-statements-should-not-be-used' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/489.html' target='_blank'>https://cwe.mitre.org/data/definitions/489.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-17</key>
+        <name>Statically serving hidden files is security-sensitive</name>
+        <description>
+            <![CDATA[Hidden files are created automatically by many tools to save user-preferences, well-known examples are .profile, .bashrc, .bash_history or .git. To simplify the view these files are not displayed by default using operating system commands like ls. Outside of the user environment, hidden files are sensitive because they are used to store privacy-related information or even hard-coded secrets. For more information check out the CWE-538 (https://cwe.mitre.org/data/definitions/538.html) and OWASP A6:2017 (https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#statically-serving-hidden-files-is-security-sensitive' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#statically-serving-hidden-files-is-security-sensitive</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#statically-serving-hidden-files-is-security-sensitive' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/538.html' target='_blank'>https://cwe.mitre.org/data/definitions/538.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-18</key>
+        <name>Using intrusive permissions With Geolocation</name>
+        <description>
+            <![CDATA[Powerful features are browser features (geolocation, camera, microphone &#8230;) that can be accessed with JavaScript API and may require a permission granted by the user. These features can have a high impact on privacy and user security thus they should only be used if they are really necessary to implement the critical parts of an application.\n\nThis rule highlights intrusive permissions when requested with the future standard (but currently experimental) web browser query API and specific APIs related to the permission. It is highly recommended to customize this rule with the permissions considered as intrusive in the context of the web application. If geolocation is required, always explain to the user why the application needs it and prefer requesting an approximate location when possible. For more information check out the CWE-250 (https://cwe.mitre.org/data/definitions/250.html) and OWASP A3:2017 (https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-intrusive-permissions-with-geolocation' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-intrusive-permissions-with-geolocation</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-intrusive-permissions-with-geolocation' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/250.html' target='_blank'>https://cwe.mitre.org/data/definitions/250.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-19</key>
+        <name>Having a permissive Cross-Origin Resource Sharing policy</name>
+        <description>
+            <![CDATA[Same origin policy in browsers prevents, by default and for security-reasons, a javascript frontend to perform a cross-origin HTTP request to a resource that has a different origin (domain, protocol, or port) from its own. The requested target can append additional HTTP headers in response, called CORS, that act like directives for the browser and change the access control policy / relax the same origin policy. The Access-Control-Allow-Origin header should be set only for a trusted origin and for specific resources. For more information checkout the OWASP A6:2017 (https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#having-a-permissive-cross-origin-resource-sharing-policy' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#having-a-permissive-cross-origin-resource-sharing-policy</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#having-a-permissive-cross-origin-resource-sharing-policy' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-20</key>
+        <name>Reading the Standard Input</name>
+        <description>
+            <![CDATA[It is common for attackers to craft inputs enabling them to exploit software vulnerabilities. Thus any data read from the standard input (stdin) can be dangerous and should be validated. Sanitize all data read from the standard input before using it. For more information check out the CWE-20 (https://cwe.mitre.org/data/definitions/20.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#reading-the-standard-input' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#reading-the-standard-input</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#reading-the-standard-input' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/20.html' target='_blank'>https://cwe.mitre.org/data/definitions/20.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-21</key>
+        <name>Using command line arguments</name>
+        <description>
+            <![CDATA[Command line arguments can be dangerous just like any other user input. They should never be used without being first validated and sanitized. Remember also that any user can retrieve the list of processes running on a system, which makes the arguments provided to them visible. Thus passing sensitive information via command line arguments should be considered as insecure. This rule raises an issue when on every program entry points (main methods) when command line arguments are used. The goal is to guide security code reviews. Sanitize all command line arguments before using them. For more information check out the CWE-88 (https://cwe.mitre.org/data/definitions/88.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-command-line-arguments' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-command-line-arguments</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-command-line-arguments' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/88.html' target='_blank'>https://cwe.mitre.org/data/definitions/88.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-22</key>
+        <name>Redirect to unknown path</name>
+        <description>
+            <![CDATA[Sanitizing untrusted URLs is an important technique for preventing attacks such as request forgeries and malicious redirections. This is done often by checking the host of an URL, it is in a set of allowed hosts. For more information check out the CWE-20 (https://cwe.mitre.org/data/definitions/20.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#redirect-to-unknown-path' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#redirect-to-unknown-path</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#redirect-to-unknown-path' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/20.html' target='_blank'>https://cwe.mitre.org/data/definitions/20.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-23</key>
+        <name>No render content from request</name>
+        <description>
+            <![CDATA[Directly using user-controlled objects as arguments to template engines might allow an attacker to do local file reads or even remote code execution. For more information check out the CWE-73 (https://cwe.mitre.org/data/definitions/73.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-render-content-from-request' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-render-content-from-request</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-render-content-from-request' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/73.html' target='_blank'>https://cwe.mitre.org/data/definitions/73.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-24</key>
+        <name>No write content from request on HTML</name>
+        <description>
+            <![CDATA[Writing messages directly to a webpage without sanitization allows a cross-site scripting vulnerability if parts of the message can be influenced by a user. For more information check out the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-write-content-from-request-on-html' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-write-content-from-request-on-html</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-write-content-from-request-on-html' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-25</key>
+        <name>Stack trace exposure</name>
+        <description>
+            <![CDATA[Software developers often add stack traces to error messages, as a debugging aid. Whenever that error message occurs for an end user, the developer can use the stack trace to help identify how to fix the problem. For more information check out the CWE-209 (https://cwe.mitre.org/data/definitions/209.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#stack-trace-exposure' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#stack-trace-exposure</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#stack-trace-exposure' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/209.html' target='_blank'>https://cwe.mitre.org/data/definitions/209.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-26</key>
+        <name>Insecure download of executable file</name>
+        <description>
+            <![CDATA[Downloading executables or other sensitive files over an unencrypted connection can leave a server open to man-in-the-middle attacks (MITM). This attack can allow an attacker to insert arbitrary content into the downloaded file, and in the worst case, allow the attacker to execute arbitrary code on the vulnerable system. For more information check out the CWE-829 (https://cwe.mitre.org/data/definitions/829.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#insecure-download-of-executable-file' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#insecure-download-of-executable-file</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#insecure-download-of-executable-file' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/829.html' target='_blank'>https://cwe.mitre.org/data/definitions/829.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-27</key>
+        <name>No use request method using data from request of user input</name>
+        <description>
+            <![CDATA[Allows user input data to be used as parameters for the &#8216;request&#8217; method. Without proper handling, it could cause a Server Side Request Forgery vulnerability. Which is a type of exploitation in which an attacker abuses the functionality of a server, causing it to access or manipulate information in that server&#8217;s domain. For more information check out the CWE-918 (https://cwe.mitre.org/data/definitions/918.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-request-method-using-data-from-request-of-user-input' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-request-method-using-data-from-request-of-user-input</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-request-method-using-data-from-request-of-user-input' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/918.html' target='_blank'>https://cwe.mitre.org/data/definitions/918.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-28</key>
+        <name>No use .get method using data from request of user input</name>
+        <description>
+            <![CDATA[Allows user input data to be used as parameters for the &#8216;request.get&#8217; method. Without proper handling, it could cause a Server Side Request Forgery vulnerability. Which is a type of exploitation in which an attacker abuses the functionality of a server, causing it to access or manipulate information in that server&#8217;s domain. For more information check out the CWE-918 (https://cwe.mitre.org/data/definitions/918.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-get-method-using-data-from-request-of-user-input' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-get-method-using-data-from-request-of-user-input</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-get-method-using-data-from-request-of-user-input' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/918.html' target='_blank'>https://cwe.mitre.org/data/definitions/918.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-29</key>
+        <name>Cryptographic RSA should be robust</name>
+        <description>
+            <![CDATA[Most of cryptographic systems require a sufficient key size to be robust against brute-force attacks. n &#8805; 2048 for RSA (n is the key length). For more information check out the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-rsa-should-be-robust' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-rsa-should-be-robust</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-rsa-should-be-robust' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-30</key>
+        <name>Cryptographic EC should be robust</name>
+        <description>
+            <![CDATA[Most of cryptographic systems require a sufficient key size to be robust against brute-force attacks. n &#8805; 224 for ECDH and ECMQV (Examples: secp192r1 is a non-compliant curve (n < 224) but secp224k1 is compliant (n >= 224)). For more information check out the CWE-326 (https://cwe.mitre.org/data/definitions/326.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-ec-should-be-robust' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-ec-should-be-robust</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#cryptographic-ec-should-be-robust' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/326.html' target='_blank'>https://cwe.mitre.org/data/definitions/326.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-31</key>
+        <name>JWT should be signed and verified with strong cipher algorithms</name>
+        <description>
+            <![CDATA[If a JSON Web Token (JWT) is not signed with a strong cipher algorithm (or not signed at all) an attacker can forge it and impersonate user identities. Don&#8217;t use none algorithm to sign or verify the validity of an algorithm. Don&#8217;t use a token without verifying its signature before. For more information check out the CWE-347 (https://cwe.mitre.org/data/definitions/347.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#jwt-should-be-signed-and-verified-with-strong-cipher-algorithms' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#jwt-should-be-signed-and-verified-with-strong-cipher-algorithms</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#jwt-should-be-signed-and-verified-with-strong-cipher-algorithms' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/347.html' target='_blank'>https://cwe.mitre.org/data/definitions/347.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-32</key>
+        <name>Server hostnames should be verified during SSL/TLS connections</name>
+        <description>
+            <![CDATA[To establish a SSL/TLS connection not vulnerable to man-in-the-middle attacks, it&#8217;s essential to make sure the server presents the right certificate. The certificate&#8217;s hostname-specific data should match the server hostname. It&#8217;s not recommended to re-invent the wheel by implementing custom hostname verification. TLS/SSL libraries provide built-in hostname verification functions that should be used.  For more information check out the CWE-297 (https://cwe.mitre.org/data/definitions/297.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-hostnames-should-be-verified-during-ssltls-connections' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-hostnames-should-be-verified-during-ssltls-connections</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-hostnames-should-be-verified-during-ssltls-connections' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/297.html' target='_blank'>https://cwe.mitre.org/data/definitions/297.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-33</key>
+        <name>Server certificates should be verified during SSL/TLS connections</name>
+        <description>
+            <![CDATA[To establish a SSL/TLS connection not vulnerable to man-in-the-middle attacks, it&#8217;s essential to make sure the server presents the right certificate. The certificate&#8217;s hostname-specific data should match the server hostname. It&#8217;s not recommended to re-invent the wheel by implementing custom hostname verification. TLS/SSL libraries provide built-in hostname verification functions that should be used.  For more information check out the CWE-297 (https://cwe.mitre.org/data/definitions/297.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-certificates-should-be-verified-during-ssltls-connections' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-certificates-should-be-verified-during-ssltls-connections</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#server-certificates-should-be-verified-during-ssltls-connections' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/297.html' target='_blank'>https://cwe.mitre.org/data/definitions/297.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-34</key>
+        <name>Untrusted content should not be included</name>
+        <description>
+            <![CDATA[Including content in your site from an untrusted source can expose your users to attackers and even compromise your own site. For that reason, this rule raises an issue for each non-relative URL. For more information check out the OWASP A1:2017 (https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#untrusted-content-should-not-be-included' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#untrusted-content-should-not-be-included</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#untrusted-content-should-not-be-included' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-35</key>
+        <name>Mysql Hard-coded credentials are security-sensitive</name>
+        <description>
+            <![CDATA[Because it is easy to extract strings from an application source code or binary, credentials should not be hard-coded. This is particularly true for applications that are distributed or that are open-source. It&#8217;s recommended to customize the configuration of this rule with additional credential words such as "oauthToken", "secret", others. For more information check out the CWE-798 (https://cwe.mitre.org/data/definitions/798.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#mysql-hard-coded-credentials-are-security-sensitive' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#mysql-hard-coded-credentials-are-security-sensitive</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#mysql-hard-coded-credentials-are-security-sensitive' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/798.html' target='_blank'>https://cwe.mitre.org/data/definitions/798.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-36</key>
+        <name>Using shell interpreter when executing OS commands</name>
+        <description>
+            <![CDATA[Arbitrary OS command injection vulnerabilities are more likely when a shell is spawned rather than a new process, indeed shell meta-chars can be used (when parameters are user-controlled for instance) to inject OS commands. For more information check out the CWE-78 (https://cwe.mitre.org/data/definitions/78.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-shell-interpreter-when-executing-os-commands' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-shell-interpreter-when-executing-os-commands</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#using-shell-interpreter-when-executing-os-commands' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/78.html' target='_blank'>https://cwe.mitre.org/data/definitions/78.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-37</key>
+        <name>Forwarding client IP address</name>
+        <description>
+            <![CDATA[Users often connect to web servers through HTTP proxies. Proxy can be configured to forward the client IP address via the X-Forwarded-For or Forwarded HTTP headers. IP address is a personal information which can identify a single user and thus impact his privacy. For more information check out the CWE-78 (https://cwe.mitre.org/data/definitions/78.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#forwarding-client-ip-address' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#forwarding-client-ip-address</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#forwarding-client-ip-address' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/78.html' target='_blank'>https://cwe.mitre.org/data/definitions/78.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-38</key>
+        <name>Allowing confidential information to be logged with signale</name>
+        <description>
+            <![CDATA[Log management is an important topic, especially for the security of a web application, to ensure user activity, including potential attackers, is recorded and available for an analyst to understand what&#8217;s happened on the web application in case of malicious activities. Retention of specific logs for a defined period of time is often necessary to comply with regulations such as GDPR, PCI DSS and others. However, to protect user&#8217;s privacy, certain informations are forbidden or strongly discouraged from being logged, such as user passwords or credit card numbers, which obviously should not be stored or at least not in clear text. For more information check out the CWE-532 (https://cwe.mitre.org/data/definitions/532.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-confidential-information-to-be-logged-with-signale' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-confidential-information-to-be-logged-with-signale</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-confidential-information-to-be-logged-with-signale' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/532.html' target='_blank'>https://cwe.mitre.org/data/definitions/532.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-39</key>
+        <name>Allowing browsers to perform DNS prefetching</name>
+        <description>
+            <![CDATA[By default, web browsers perform DNS prefetching to reduce latency due to DNS resolutions required when an user clicks links from a website page. It can add significant latency during requests, especially if the page contains many links to cross-origin domains. DNS prefetch allows web browsers to perform DNS resolving in the background before the user clicks a link. This feature can cause privacy issues because DNS resolving from the user&#8217;s computer is performed without his consent if he doesn&#8217;t intent to go to the linked website. On a complex private webpage, a combination "of unique links/DNS resolutions" can indicate, to a eavesdropper for instance, that the user is visiting the private page. For more information check out the OWASP A3:2017 (https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-perform-dns-prefetching' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-perform-dns-prefetching</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-perform-dns-prefetching' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-40</key>
+        <name>Disabling Certificate Transparency monitoring</name>
+        <description>
+            <![CDATA[Certificate Transparency (CT) is an open-framework to protect against identity theft when certificates are issued. Certificate Authorities (CA) electronically sign certificate after verifying the identify of the certificate owner. Attackers use, among other things, social engineering attacks to trick a CA to correctly verifying a spoofed identity/forged certificate. CAs implement Certificate Transparency framework to publicly log the records of newly issued certificates, allowing the public and in particular the identity owner to monitor these logs to verify that his identify was not usurped. For more information check out the OWASP A3:2017 (https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-certificate-transparency-monitoring' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-certificate-transparency-monitoring</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-certificate-transparency-monitoring' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-41</key>
+        <name>Disabling strict HTTP no-referrer policy</name>
+        <description>
+            <![CDATA[Confidential information should not be set inside URLs (GET requests) of the application and a safe (ie: different from unsafe-url or no-referrer-when-downgrade) referrer-Policy header, to control how much information is included in the referer header, should be used. For more information check out the OWASP A3:2017 (https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-strict-http-no-referrer-policy' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-strict-http-no-referrer-policy</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-strict-http-no-referrer-policy' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-42</key>
+        <name>Allowing browsers to sniff MIME types</name>
+        <description>
+            <![CDATA[Implement X-Content-Type-Options header with nosniff value (the only existing value for this header) which is supported by all modern browsers and will prevent browsers from performing MIME type sniffing, so that in case of Content-Type header mismatch, the resource is not interpreted. For example within a <script> object context, JavaScript MIME types are expected (like application/javascript) in the Content-Type header. For more information check out the OWASP A6:2017 (https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-sniff-mime-types' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-sniff-mime-types</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-browsers-to-sniff-mime-types' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-43</key>
+        <name>Disabling content security policy frame-ancestors directive</name>
+        <description>
+            <![CDATA[Clickjacking attacks occur when an attacker try to trick an user to click on certain buttons/links of a legit website. This attack can take place with malicious HTML frames well hidden in an attacker website. Implement content security policy frame-ancestors directive which is supported by all modern browsers and will specify the origins of frame allowed to be loaded by the browser (this directive deprecates X-Frame-Options). For more information check out the OWASP A6:2017 (https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-frame-ancestors-directive' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-frame-ancestors-directive</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-frame-ancestors-directive' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-44</key>
+        <name>Allowing mixed-content</name>
+        <description>
+            <![CDATA[A mixed-content is when a resource is loaded with the HTTP protocol, from a website accessed with the HTTPs protocol, thus mixed-content are not encrypted and exposed to MITM attacks and could break the entire level of protection that was desired by implementing encryption with the HTTPs protocol. Implement content security policy block-all-mixed-content directive which is supported by all modern browsers and will block loading of mixed-contents. For more information check out the OWASP A3:2017 (https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-mixed-content' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-mixed-content</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-mixed-content' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-45</key>
+        <name>Disabling content security policy fetch directives</name>
+        <description>
+            <![CDATA[Content security policy (CSP) (fetch directives) is a W3C standard which is used by a server to specify, via a http header, the origins from where the browser is allowed to load resources. It can help to mitigate the risk of cross site scripting (XSS) attacks and reduce privileges used by an application. If the website doesn&#8217;t define CSP header the browser will apply same-origin policy by default. Implement content security policy fetch directives, in particular default-src directive and continue to properly sanitize and validate all inputs of the application, indeed CSP fetch directives is only a tool to reduce the impact of cross site scripting attacks. For more information check out the OWASP A6:2017 (https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-fetch-directives' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-fetch-directives</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#disabling-content-security-policy-fetch-directives' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-46</key>
+        <name>Creating cookies without the "HttpOnly" flag</name>
+        <description>
+            <![CDATA[When a cookie is configured with the HttpOnly attribute set to true, the browser guaranties that no client-side script will be able to read it. In most cases, when a cookie is created, the default value of HttpOnly is false and it&#8217;s up to the developer to decide whether or not the content of the cookie can be read by the client-side script. As a majority of Cross-Site Scripting (XSS) attacks target the theft of session-cookies, the HttpOnly attribute can help to reduce their impact as it won&#8217;t be possible to exploit the XSS vulnerability to steal session-cookies. By default the HttpOnly flag should be set to true for most of the cookies and it&#8217;s mandatory for session / sensitive-security cookies. For more information check out the OWASP A7:2017 (https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS).html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-httponly-flag' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-httponly-flag</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-httponly-flag' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS).html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS).html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-47</key>
+        <name>Creating cookies without the "secure" flag</name>
+        <description>
+            <![CDATA[When a cookie is protected with the secure attribute set to true it will not be send by the browser over an unencrypted HTTP request and thus cannot be observed by an unauthorized person during a man-in-the-middle attack. It is recommended to use HTTPs everywhere so setting the secure flag to true should be the default behaviour when creating cookies. For more information check out the OWASP A3:2017 (https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-secure-flag' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-secure-flag</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#creating-cookies-without-the-secure-flag' target='_blank'> Rule Docs</a> <br/> <a href='https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html' target='_blank'>https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-48</key>
+        <name>No use socket manually</name>
+        <description>
+            <![CDATA[Sockets are vulnerable in multiple ways: They enable a software to interact with the outside world. As this world is full of attackers it is necessary to check that they cannot receive sensitive information or inject dangerous input.The number of sockets is limited and can be exhausted. Which makes the application unresponsive to users who need additional sockets. In many cases there is no need to open a socket yourself. Use instead libraries and existing protocols For more information check out the CWE-20 (https://cwe.mitre.org/data/definitions/20.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-socket-manually' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-socket-manually</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-use-socket-manually' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/20.html' target='_blank'>https://cwe.mitre.org/data/definitions/20.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-49</key>
+        <name>Encryption Algorithms Weak</name>
+        <description>
+            <![CDATA[The perform secure cryptography, operation modes and padding scheme are essentials and should be used correctly according to the encryption algorithm:For block cipher encryption algorithms (like AES), the GCM (Galois Counter Mode) mode that works internally with zero/no padding scheme, is recommended. At the opposite, these modes and/or schemes are highly discouraged:Electronic Codebook (ECB) mode is vulnerable because it doesn&#8217;t provide serious message confidentiality: under a given key any given plaintext block always gets encrypted to the same ciphertext block.Cipher Block Chaining (CBC) with PKCS#5 padding (or PKCS#7) is vulnerable to padding oracle attacks.RSA encryption algorithm should be used with the recommended padding scheme (OAEP). More specifically for block cipher, it&#8217;s not recommended to use algorithm with a block size inferior than 128 bits. For more information check out the CWE-327 (https://cwe.mitre.org/data/definitions/327.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#encryption-algorithms-weak' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#encryption-algorithms-weak</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#encryption-algorithms-weak' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/327.html' target='_blank'>https://cwe.mitre.org/data/definitions/327.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-50</key>
+        <name>File uploads should be restricted</name>
+        <description>
+            <![CDATA[These minimum restrictions should be applied when handling file uploads: the file upload folder to restrict untrusted files to a specific folder. the file extension of the uploaded file to prevent remote code execution. Also the size of the uploaded file should be limited to prevent denial of service attacks. For more information check out the CWE-434 (https://cwe.mitre.org/data/definitions/434.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#file-uploads-should-be-restricted' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#file-uploads-should-be-restricted</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#file-uploads-should-be-restricted' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/434.html' target='_blank'>https://cwe.mitre.org/data/definitions/434.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-51</key>
+        <name>Allowing requests with excessive content length is security-sensitive</name>
+        <description>
+            <![CDATA[Rejecting requests with significant content length is a good practice to control the network traffic intensity and thus resource consumption in order to prevents DoS attacks, In your multer by default is no limit and maximum accept in Formidable and multer is 8mb. Ask Yourself Whether: Size limits are not defined for the different resources of the web application? The web application is not protected by rate limiting features? The web application infrastructure has limited resources? There is a risk if you answered yes to any of those questions. For more information check out the CWE-770 (https://cwe.mitre.org/data/definitions/770.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-requests-with-excessive-content-length-is-security-sensitive' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-requests-with-excessive-content-length-is-security-sensitive</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#allowing-requests-with-excessive-content-length-is-security-sensitive' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/770.html' target='_blank'>https://cwe.mitre.org/data/definitions/770.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-52</key>
+        <name>No Disable Sanitize Html</name>
+        <description>
+            <![CDATA[To reduce the risk of cross-site scripting attacks, templating systems, such as Twig, Django, Smarty, Groovy&#8217;s template engine, allow configuration of automatic variable escaping before rendering templates. When escape occurs, characters that make sense to the browser (eg: <a>) will be transformed/replaced with escaped/sanitized values (eg: & lt;a& gt; ). Enable auto-escaping by default and continue to review the use of inputs in order to be sure that the chosen auto-escaping strategy is the right one. For more information check out the CWE-79 (https://cwe.mitre.org/data/definitions/79.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-sanitize-html' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-sanitize-html</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#no-disable-sanitize-html' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/79.html' target='_blank'>https://cwe.mitre.org/data/definitions/79.html</a>]]>
+        </help>
+    </rule>
+    <rule>
+        <key>HS-JAVASCRIPT-53</key>
+        <name>SQL Injection</name>
+        <description>
+            <![CDATA[SQL queries often need to use a hardcoded SQL string with a dynamic parameter coming from a user request. Formatting a string to add those parameters to the request is a bad practice as it can result in an SQL injection. The safe way to add parameters to a SQL query is to use SQL binding mechanisms. For more information check out the CWE-564 (https://cwe.mitre.org/data/definitions/564.html) and OWASP A1:2017 (https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html) advisory. <br/> <a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection' target='_blank'> https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection</a>]]>
+        </description>
+        <type>VULNERABILITY</type>
+        <help>
+            <![CDATA[<a href='https://docs.horusec.io/docs/cli/analysis-tools/open-source-horusec-engine/horusec-nodejs#sql-injection' target='_blank'> Rule Docs</a> <br/> <a href='https://cwe.mitre.org/data/definitions/564.html' target='_blank'>https://cwe.mitre.org/data/definitions/564.html</a>]]>
+        </help>
+    </rule>
+</rules>

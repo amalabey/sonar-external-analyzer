@@ -32,13 +32,13 @@ class CheckovRulesProvider(ExternalRulesProvider):
                 soup = BeautifulSoup(response.content, 'html.parser')
 
                 name = soup.select('header#content-head h1')[0].contents[0]
-                desc = soup.select('div#content-container div.markdown-body')[0].encode_contents()
+                desc = "".join([str(x) for x in soup.select('div#content-container div.markdown-body')[0].contents])
                 rule = Rule(id=rule_id, name=name, desc=desc, link=doco_url, help_link="")
                 return rule
             else:
                 print("WARN: Unable to access {0}".format(doco_url))
-        except:
-            print("ERR: Unable to access {0}".format(doco_url))
+        except Exception as e:
+            print("ERR: {0}".format(str(e)))
             
         return None
         

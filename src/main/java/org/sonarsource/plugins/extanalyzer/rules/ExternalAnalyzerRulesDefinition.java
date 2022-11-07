@@ -43,7 +43,7 @@ public class ExternalAnalyzerRulesDefinition implements RulesDefinition {
     .setName(name)
     .setSeverity(Severity.MAJOR)
     .setStatus(RuleStatus.READY)
-    .setType(RuleType.VULNERABILITY)
+    .setType(RuleType.SECURITY_HOTSPOT)
     .setHtmlDescription(description)
     .addDescriptionSection(descriptionSection(HOW_TO_FIX_SECTION_KEY, String.format("%s <hr><br> %s", description, help)));
     rule.setDebtRemediationFunction(rule.debtRemediationFunctions().linearWithOffset("1h", "30min"));

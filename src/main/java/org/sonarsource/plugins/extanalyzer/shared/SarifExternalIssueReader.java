@@ -23,7 +23,9 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             ArrayList<ExternalIssue> sarifResults = new ArrayList<ExternalIssue>();
-            SarifSchema210  sarif = objectMapper.readValue(new File(sarifFilePath), SarifSchema210.class);
+            var sarifFile = new File(sarifFilePath);
+            var baseDirectoryPath = sarifFile.getAbsoluteFile().getParent();
+            SarifSchema210  sarif = objectMapper.readValue(sarifFile, SarifSchema210.class);
             for(Run run : sarif.getRuns()) {
                 for(Result result : run.getResults()) {
                     var ruleId = result.getRuleId();
@@ -43,8 +45,9 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
                         .getPhysicalLocation()
                         .getRegion()
                         .getStartColumn();
-                    LOGGER.info("SarifExternalIssueReader: ruleId={}, filePath={}, message={}",ruleId, filePath, message);
-                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, startLine, startColumn != null?startColumn.intValue():0));
+                    var absoluteFilePath = new File(baseDirectoryPath, filePath).getPath();
+                    LOGGER.info("SarifExternalIssueReader: ruleId={}, filePath={}, absoluteFilePath={}, message={}",ruleId, filePath, absoluteFilePath, message);
+                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, absoluteFilePath, startLine, startColumn != null?startColumn.intValue():0));
                 }
             }
             return sarifResults;

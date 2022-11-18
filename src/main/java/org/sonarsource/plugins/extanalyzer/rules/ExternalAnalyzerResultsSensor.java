@@ -65,8 +65,9 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
 
       NewIssueLocation primaryLocation = newIssue.newLocation()
           .on(inputFile)
-          .at(inputFile.selectLine(issue.StartLine))
-          .message(issue.Message);
+          .at(inputFile.selectLine(issue.StartLine));
+      if(issue.Message != null)
+          primaryLocation.message(issue.Message);
       newIssue.at(primaryLocation);
       newIssue.save();
     } else {

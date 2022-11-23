@@ -5,7 +5,7 @@
   <groupId>org.sonarsource.plugins.extanalyzer</groupId>
   <artifactId>sonar-external-analyzer</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>0.0.9</version>
+  <version>0.0.10</version>
 
   <name>SonarQube Plugin to execute external Analyzers</name>
   <description>Executes external analyzers from a docker container and reports issues</description>

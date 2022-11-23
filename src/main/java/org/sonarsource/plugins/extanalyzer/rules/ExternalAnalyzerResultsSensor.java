@@ -52,29 +52,36 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
   }
 
   private void importIssue(SensorContext context, ExternalIssue issue) {
-    LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}", issue.FilePath, issue.RuleId);
-    var ruleFinder = new RuleFinder();
-    String matchedRuleKey = ruleFinder.getMatchingRuleId(issue.RuleId);
-    LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}, matchedKey={}", issue.FilePath, issue.RuleId, matchedRuleKey);
-    FileSystem fs = context.fileSystem();
-    Iterable<InputFile> matchedFiles = fs.inputFiles(fs.predicates().hasAbsolutePath(issue.AbsoluteFilePath));
-    if (Iterables.size(matchedFiles) > 0) {
-      InputFile inputFile = matchedFiles.iterator().next();
-      RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, matchedRuleKey);
-      LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {} - {}", inputFile.filename(), ruleKey.rule());
-      NewIssue newIssue = context.newIssue()
-          .forRule(ruleKey)
-          .gap(ARBITRARY_GAP);
+    try {
+      LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}", issue.FilePath,
+          issue.RuleId);
+      var ruleFinder = new RuleFinder();
+      String matchedRuleKey = ruleFinder.getMatchingRuleId(issue.RuleId);
+      LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}, matchedKey={}",
+          issue.FilePath, issue.RuleId, matchedRuleKey);
+      FileSystem fs = context.fileSystem();
+      Iterable<InputFile> matchedFiles = fs.inputFiles(fs.predicates().hasAbsolutePath(issue.AbsoluteFilePath));
+      if (Iterables.size(matchedFiles) > 0) {
+        InputFile inputFile = matchedFiles.iterator().next();
+        RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, matchedRuleKey);
+        LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {} - {}", inputFile.filename(), ruleKey.rule());
+        NewIssue newIssue = context.newIssue()
+            .forRule(ruleKey)
+            .gap(ARBITRARY_GAP);
 
-      NewIssueLocation primaryLocation = newIssue.newLocation()
-          .on(inputFile)
-          .at(inputFile.selectLine(issue.StartLine));
-      if(issue.Message != null)
+        NewIssueLocation primaryLocation = newIssue.newLocation()
+            .on(inputFile)
+            .at(inputFile.selectLine(issue.StartLine));
+        if (issue.Message != null)
           primaryLocation.message(issue.Message);
-      newIssue.at(primaryLocation);
-      newIssue.save();
-    } else {
-      LOGGER.warn("ExternalAnalyzerResultsSensor: Unable to find file: {} in the input source files", issue.FilePath);
+        newIssue.at(primaryLocation);
+        newIssue.save();
+      } else {
+        LOGGER.warn("ExternalAnalyzerResultsSensor: Unable to find file: {} in the input source files", issue.FilePath);
+      }
+    } catch (Exception exception) {
+      LOGGER.error("error occurred while creating the issue: {}",exception.getMessage());
+      LOGGER.error(exception.getStackTrace().toString());
     }
   }
 }

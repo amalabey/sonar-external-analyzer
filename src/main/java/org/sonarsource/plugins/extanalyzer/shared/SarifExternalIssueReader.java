@@ -35,19 +35,15 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
                         .getPhysicalLocation()
                         .getArtifactLocation()
                         .getUri();
-                    var startLine = result.getLocations()
+                    var region = result.getLocations()
                         .get(0)
                         .getPhysicalLocation()
-                        .getRegion()
-                        .getStartLine();
-                    var startColumn = result.getLocations()
-                        .get(0)
-                        .getPhysicalLocation()
-                        .getRegion()
-                        .getStartColumn();
-                    var absoluteFilePath = new File(baseDirectoryPath, filePath).getPath();
+                        .getRegion();
+                    var startLine =  region != null ? region.getStartLine() : null;
+                    var startColumn = region != null ? region.getStartColumn() : null;
+                    var absoluteFilePath = filePath.startsWith("/") ? filePath : new File(baseDirectoryPath, filePath).getPath();
                     LOGGER.info("SarifExternalIssueReader: ruleId={}, filePath={}, absoluteFilePath={}, message={}",ruleId, filePath, absoluteFilePath, message);
-                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, absoluteFilePath, startLine != null?startLine.intValue():0, startColumn != null?startColumn.intValue():0));
+                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, absoluteFilePath, startLine != null?startLine.intValue():1, startColumn != null?startColumn.intValue():1));
                 }
             }
             return sarifResults;

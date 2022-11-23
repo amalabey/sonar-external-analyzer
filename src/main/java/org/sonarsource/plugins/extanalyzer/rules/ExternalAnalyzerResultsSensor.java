@@ -52,12 +52,15 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
   }
 
   private void importIssue(SensorContext context, ExternalIssue issue) {
-    LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, ruleid={}", issue.FilePath, issue.RuleId);
+    LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}", issue.FilePath, issue.RuleId);
+    var ruleFinder = new RuleFinder();
+    String matchedRuleKey = ruleFinder.getMatchingRuleId(issue.RuleId);
+    LOGGER.info("ExternalAnalyzerResultsSensor: Importing issue: file={}, issueRuleId={}, matchedKey={}", issue.FilePath, issue.RuleId, matchedRuleKey);
     FileSystem fs = context.fileSystem();
     Iterable<InputFile> matchedFiles = fs.inputFiles(fs.predicates().hasAbsolutePath(issue.AbsoluteFilePath));
     if (Iterables.size(matchedFiles) > 0) {
       InputFile inputFile = matchedFiles.iterator().next();
-      RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, issue.RuleId);
+      RuleKey ruleKey = RuleKey.of(Constants.REPOSITORY_KEY, matchedRuleKey);
       LOGGER.info("ExternalAnalyzerResultsSensor: Creating an issue {} - {}", inputFile.filename(), ruleKey.rule());
       NewIssue newIssue = context.newIssue()
           .forRule(ruleKey)

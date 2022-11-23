@@ -47,7 +47,7 @@ public class SarifExternalIssueReader implements IExternalIssueReader {
                         .getStartColumn();
                     var absoluteFilePath = new File(baseDirectoryPath, filePath).getPath();
                     LOGGER.info("SarifExternalIssueReader: ruleId={}, filePath={}, absoluteFilePath={}, message={}",ruleId, filePath, absoluteFilePath, message);
-                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, absoluteFilePath, startLine, startColumn != null?startColumn.intValue():0));
+                    sarifResults.add(new ExternalIssue(ruleId, message, filePath, absoluteFilePath, startLine != null?startLine.intValue():0, startColumn != null?startColumn.intValue():0));
                 }
             }
             return sarifResults;

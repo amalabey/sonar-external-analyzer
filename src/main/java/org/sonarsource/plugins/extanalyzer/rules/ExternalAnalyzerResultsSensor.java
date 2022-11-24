@@ -76,12 +76,14 @@ public class ExternalAnalyzerResultsSensor implements Sensor {
           primaryLocation.message(issue.Message);
         newIssue.at(primaryLocation);
         newIssue.save();
+        LOGGER.info("ExternalAnalyzerResultsSensor: Completed creating the issue {} - {}", inputFile.filename(), ruleKey.rule());
       } else {
         LOGGER.warn("ExternalAnalyzerResultsSensor: Unable to find file: {} in the input source files", issue.FilePath);
       }
     } catch (Exception exception) {
       LOGGER.error("error occurred while creating the issue: {}",exception.getMessage());
       LOGGER.error(exception.getStackTrace().toString());
+      LOGGER.warn("ExternalAnalyzerResultsSensor: Some issues may not be reported to the SonarQube server");
     }
   }
 }

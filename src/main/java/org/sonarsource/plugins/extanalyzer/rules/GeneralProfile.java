@@ -12,6 +12,8 @@ public class GeneralProfile implements BuiltInQualityProfilesDefinition {
         NewBuiltInQualityProfile dependencyCheckWay = context.createBuiltInQualityProfile("General", Constants.LANGUAGE_KEY);
         IExternalRulesStore store = new XmlExternalRulesStore();
         Iterable<ExternalRule> rules = store.getRules();
+        dependencyCheckWay.activateRule(Constants.REPOSITORY_KEY, Constants.DEP_CHECK_RULE_ID);
+        dependencyCheckWay.activateRule(Constants.REPOSITORY_KEY, Constants.DEFAULT_RULE_ID);
         for(ExternalRule rule : rules) {
             dependencyCheckWay.activateRule(Constants.REPOSITORY_KEY, rule.Key);
         }

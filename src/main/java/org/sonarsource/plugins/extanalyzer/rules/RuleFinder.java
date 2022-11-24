@@ -19,6 +19,6 @@ public class RuleFinder {
             return Constants.DEP_CHECK_RULE_ID;
         }
 
-        return Constants.DEFAULT_RULE_ID;
+        return key;
     }
 }

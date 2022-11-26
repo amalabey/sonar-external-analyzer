@@ -4,6 +4,7 @@ from sonarqube import SonarQubeRulesXmlWriter
 from sonarqube import SonarQubeRulesXmlReader
 from bpa import TemplateAnalyzerRulesProvider
 from psrules import PSRuleRulesProvider
+from gitleaks import GitLeaksRulesProvider
 
 if __name__ == "__main__":
     print("Generating rules from external tools documentation")
@@ -11,11 +12,13 @@ if __name__ == "__main__":
     checkov = CheckovRulesProvider()
     ta = TemplateAnalyzerRulesProvider()
     psrule = PSRuleRulesProvider()
-    hsc_rules = horusec.get_rules()
-    ckv_rules = checkov.get_rules()
-    ta_rules = ta.get_rules()
-    psrule_rules = psrule.get_rules()
-    rules = psrule_rules + ta_rules + hsc_rules + ckv_rules
+    gitleaks = GitLeaksRulesProvider()
+    rules = list()
+    rules += horusec.get_rules()
+    rules += checkov.get_rules()
+    rules += ta.get_rules()
+    rules += psrule.get_rules()
+    rules += gitleaks.get_rules()
 
     rules_xml_path = "../../src/main/resources/sonar-rules.xml"
     writer = SonarQubeRulesXmlWriter()

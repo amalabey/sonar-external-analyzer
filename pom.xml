@@ -5,7 +5,7 @@
   <groupId>org.sonarsource.plugins.extanalyzer</groupId>
   <artifactId>sonar-external-analyzer</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>0.0.15</version>
+  <version>0.0.16</version>
 
   <name>SonarQube Plugin to execute external Analyzers</name>
   <description>Executes external analyzers from a docker container and reports issues</description>
@@ -89,7 +89,7 @@
           <sonarQubeMinVersion>9.5</sonarQubeMinVersion>
           <archive>
             <manifestEntries>
-              <Implementation-Build>6a400c403287ac5b465c2dbc5dd2807ed2c7d36e</Implementation-Build>
+              <Implementation-Build>d91137a7152e7933765be441372525f71cfa386d</Implementation-Build>
             </manifestEntries>
           </archive>
         </configuration>
